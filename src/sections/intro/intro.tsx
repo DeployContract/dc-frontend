@@ -1,21 +1,19 @@
 import React from "react";
 import logo from "./../../logo.svg";
+import { AppBar, Box, Toolbar, Icon } from "@mui/material";
 
 function Intro() {
     return (
-        <div>
-            <h1>INTRO</h1>
-            <header className="App-header">
-                <h1>Contract to Chain Deployer</h1>
-                <a className="App-link" href="/" rel="noopener noreferrer">
-                    Home
-                </a>
-                <a className="App-link" href="/app" rel="noopener noreferrer">
-                    App
-                </a>
-                <img src={logo} className="App-logo" alt="logo" />
-            </header>
-        </div>
+        <Box>
+            <AppBar>
+                <Toolbar>
+                    <Icon sx={{ fontSize: 50 }}>
+                        <img src={logo} alt="LOGO" />
+                    </Icon>
+                    <h3>Contract to Chain Deployer</h3>
+                </Toolbar>
+            </AppBar>
+        </Box>
     );
 }
 

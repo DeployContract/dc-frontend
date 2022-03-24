@@ -5,7 +5,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import App from "./sections/app/app";
 import Intro from "./sections/intro/intro";
-import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
