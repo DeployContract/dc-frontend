@@ -9,23 +9,7 @@ import {
     ListItemIcon,
 } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-
-interface NavigationItem {
-    /**
-     * Icon of item
-     */
-    icon?: ReactElement<typeof Icon>;
-
-    /**
-     * Name that will displayed
-     */
-    name: string;
-
-    /**
-     * TODO
-     */
-    onClick?: Function;
-}
+import { NavigationItem } from "library";
 
 const navList: Array<NavigationItem> = [
     {
