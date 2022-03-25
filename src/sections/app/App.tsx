@@ -1,8 +1,15 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import Header from "./header/Header";
+import Navigation from "./header/Navigation";
 
 function App() {
-    return <Box sx={{ flexGrow: 1 }}></Box>;
+    return (
+        <Box sx={{ display: "flex" }}>
+            <Header />
+            <Navigation />
+        </Box>
+    );
 }
 
 export default App;
