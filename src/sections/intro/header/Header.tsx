@@ -1,6 +1,5 @@
-import * as React from "react";
+import React, { ReactElement } from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
@@ -10,34 +9,62 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import IntroHeaderDrawer from "./Navigation";
+import MenuIcon from "@mui/icons-material/Menu";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import {
+    Box,
+    Drawer,
+    List,
+    ListItem,
+    ListItemText,
+    Icon,
+    ListItemIcon,
+} from "@mui/material";
 
-const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Header = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-        null
-    );
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-        null
-    );
+type Anchor = "top" | "left" | "bottom" | "right";
+const selectedAnchor: Anchor = "top";
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
+interface IntroNavigationItem {
+    /**
+     * Icon of item
+     */
+    icon?: ReactElement<typeof Icon>;
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    /**
+     * Name that will displayed
+     */
+    name: string;
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    /**
+     * TODO
+     */
+    onClick?: Function;
+}
 
+const navList: Array<IntroNavigationItem> = [
+    {
+        icon: (
+            <Icon>
+                <DashboardIcon />
+            </Icon>
+        ),
+        name: "Get Start",
+    },
+    {
+        name: "Token",
+    },
+    {
+        name: "Mint",
+    },
+    {
+        name: "Burn",
+    },
+];
+
+export const Header = () => {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -48,7 +75,7 @@ const Header = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
                     >
-                        LOGO
+                        Contract To Chain Deployer
                     </Typography>
 
                     <Box
@@ -57,7 +84,7 @@ const Header = () => {
                             display: { xs: "flex", md: "none" },
                         }}
                     >
-                        <IntroHeaderDrawer />
+                        <NavDrawer />
                     </Box>
                     <Typography
                         variant="h6"
@@ -68,68 +95,149 @@ const Header = () => {
                             display: { xs: "flex", md: "none" },
                         }}
                     >
-                        LOGO
+                        Contract To Chain
                     </Typography>
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: { xs: "none", md: "flex" },
-                        }}
-                    >
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: "white", display: "block" }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton
-                                onClick={handleOpenUserMenu}
-                                sx={{ p: 0 }}
-                            >
-                                <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/2.jpg"
-                                />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: "45px" }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem
-                                    key={setting}
-                                    onClick={handleCloseUserMenu}
-                                >
-                                    <Typography textAlign="center">
-                                        {setting}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+                    <NavListStable />
+                    <UserProfile />
                 </Toolbar>
             </Container>
         </AppBar>
     );
 };
-export default Header;
+
+const NavListStable = () => (
+    <Box
+        sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+        }}
+    >
+        {navList.map((item) => (
+            <Button
+                key={item.name}
+                // onClick={item.onClick}
+                sx={{ my: 2, color: "white", display: "block" }}
+            >
+                {item.name}
+            </Button>
+        ))}
+    </Box>
+);
+
+const NavDrawer = () => {
+    const [state, setState] = React.useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    });
+
+    const toggleDrawer =
+        (anchor: Anchor, open: boolean) =>
+        (event: React.KeyboardEvent | React.MouseEvent) => {
+            if (
+                event &&
+                event.type === "keydown" &&
+                ((event as React.KeyboardEvent).key === "Tab" ||
+                    (event as React.KeyboardEvent).key === "Shift")
+            ) {
+                return;
+            }
+
+            setState({ ...state, [anchor]: open });
+        };
+
+    const list = (anchor: Anchor) => (
+        <Box
+            sx={{
+                width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+            }}
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                {navList.map((item) => (
+                    <ListItem button>
+                        {item.icon ? (
+                            <ListItemIcon>{item.icon}</ListItemIcon>
+                        ) : null}
+                        <ListItemText>{item.name}</ListItemText>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
+
+    return (
+        <div>
+            <React.Fragment key={selectedAnchor}>
+                <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={toggleDrawer("top", true)}
+                    color="inherit"
+                >
+                    <MenuIcon />
+                </IconButton>
+                <SwipeableDrawer
+                    anchor={selectedAnchor}
+                    open={state[selectedAnchor]}
+                    onClose={toggleDrawer(selectedAnchor, false)}
+                    onOpen={toggleDrawer(selectedAnchor, true)}
+                >
+                    {list(selectedAnchor)}
+                </SwipeableDrawer>
+            </React.Fragment>
+        </div>
+    );
+};
+
+const UserProfile = () => {
+    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+        null
+    );
+    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+    return (
+        <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                        alt="Remy Sharp"
+                        src="/static/images/avatar/2.jpg"
+                    />
+                </IconButton>
+            </Tooltip>
+            <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+            >
+                {settings.map((setting) => (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                        <Typography textAlign="center">{setting}</Typography>
+                    </MenuItem>
+                ))}
+            </Menu>
+        </Box>
+    );
+};

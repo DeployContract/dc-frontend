@@ -1,12 +1,11 @@
+import { Box } from "@mui/material";
 import React from "react";
-import Header from "./header/Header";
+import { Header } from "./header/Header";
 
-function Blog() {
+export function Intro() {
     return (
-        <div>
+        <Box>
             <Header />
-        </div>
+        </Box>
     );
 }
-
-export default Blog;
