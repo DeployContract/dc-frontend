@@ -1,20 +1,12 @@
 import React from "react";
-import logo from "./../../logo.svg";
-import { AppBar, Box, Toolbar, Icon } from "@mui/material";
+import Header from "./header/Header";
 
-function Intro() {
+function Blog() {
     return (
-        <Box>
-            <AppBar>
-                <Toolbar>
-                    <Icon sx={{ fontSize: 50 }}>
-                        <img src={logo} alt="LOGO" />
-                    </Icon>
-                    <h3>Contract to Chain Deployer</h3>
-                </Toolbar>
-            </AppBar>
-        </Box>
+        <div>
+            <Header />
+        </div>
     );
 }
 
-export default Intro;
+export default Blog;
