@@ -14,7 +14,6 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import {
     Box,
-    Drawer,
     List,
     ListItem,
     ListItemText,
@@ -52,6 +51,11 @@ const navList: Array<IntroNavigationItem> = [
             </Icon>
         ),
         name: "Get Start",
+        onClick: () => {
+            alert("ZZZ");
+            window.history.pushState({}, "", "/app");
+            // window.history.replaceState({}, "", "/app");
+        },
     },
     {
         name: "Token",
