@@ -1,8 +1,21 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { Header } from "./Header";
-import { Route } from "react-router-dom";
+import { GetStart } from "./GetStart";
+import { Tutorial } from "./Tutorial";
+import { LetsGo } from "./LetsGo";
+import { AboutUs } from "./AboutUs";
+import { Footer } from "./Footer";
 
-export function Intro() {
-    return <Header />;
+export function WebIntro() {
+    return (
+        <Box>
+            <Header />
+            <GetStart />
+            <Tutorial />
+            <LetsGo />
+            <AboutUs />
+            <Footer />
+        </Box>
+    );
 }

@@ -73,15 +73,6 @@ export const Header = () => {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    >
-                        Contract To Chain Deployer
-                    </Typography>
-
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -94,12 +85,20 @@ export const Header = () => {
                         variant="h6"
                         noWrap
                         component="div"
+                        sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+                    >
+                        DepConChain - Deploy Contract on Chain
+                    </Typography>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
                         sx={{
                             flexGrow: 1,
                             display: { xs: "flex", md: "none" },
                         }}
                     >
-                        Contract To Chain
+                        CoToCh
                     </Typography>
                     <NavListStable />
                     <UserProfile />
