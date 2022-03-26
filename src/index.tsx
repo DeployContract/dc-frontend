@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./sections/app/app";
-import Intro from "./sections/intro/intro";
-import { BrowserRouter, Router, Routes, Route, Link } from "react-router-dom";
+import App from "./sections/app/App";
+import { WebIntro } from "./sections/intro/web/Intro";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PwaIntro } from "./sections/intro/pwa/Intro";
+import "./index.css";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Intro />} />
-                <Route path="/app" element={<App />} />
+                <Route path="/">
+                    <Route index element={<WebIntro />} />
+                    <Route path="PWA" element={<PwaIntro />} />
+                </Route>
+                <Route path="app" element={<App />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,
