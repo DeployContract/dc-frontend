@@ -28,7 +28,7 @@ export function GetStart() {
                     Deploy Contract on Chain
                 </Typography>
                 <Typography variant="subtitle1" component="div">
-                    Create your contract, deploy on blockchain.
+                    Create contract, deploy on blockchain.
                 </Typography>
                 <Typography variant="subtitle1" component="div">
                     ERC20, BEP20 Token Generator.

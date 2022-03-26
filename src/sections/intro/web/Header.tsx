@@ -50,7 +50,7 @@ const navList: Array<IntroNavigationItem> = [
                 <DashboardIcon />
             </Icon>
         ),
-        name: "Get Start",
+        name: "Get Start Now",
         onClick: () => {
             alert("ZZZ");
             window.history.pushState({}, "", "/app");
@@ -58,13 +58,10 @@ const navList: Array<IntroNavigationItem> = [
         },
     },
     {
-        name: "Token",
+        name: "Tutorials",
     },
     {
-        name: "Mint",
-    },
-    {
-        name: "Burn",
+        name: "About Us",
     },
 ];
 
@@ -87,7 +84,7 @@ export const Header = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
                     >
-                        DepConChain - Deploy Contract on Chain
+                        DepConChain or CoToCh
                     </Typography>
                     <Typography
                         variant="h6"
