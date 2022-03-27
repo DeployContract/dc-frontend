@@ -3,11 +3,11 @@ import React from "react";
 import { Header } from "./Header";
 import { GetStart } from "./GetStart";
 import { Tutorial } from "./Tutorial";
+import { Pricing } from "./Pricing";
 import { Faq } from "../faq/Faq";
 import { RoadMap } from "./RoadMap";
-import { AboutUs } from "./AboutUs";
 import { Footer } from "./Footer";
-import "./index.css";
+import "./Web.css";
 
 export function Web() {
     return (
@@ -15,14 +15,17 @@ export function Web() {
             <Header />
             <GetStart />
             <Box className="section">
-                <Typography variant="h3" component="h2" align="center">
-                    Tutorials
-                </Typography>
                 <Tutorial />
             </Box>
             <Box className="section">
                 <Typography variant="h3" component="h2" align="center">
                     Pricing
+                </Typography>
+                <Pricing />
+            </Box>
+            <Box className="section">
+                <Typography variant="h3" component="h2" align="center">
+                    Custom Contract
                 </Typography>
             </Box>
             <Box className="section">
@@ -36,17 +39,6 @@ export function Web() {
                     Road map
                 </Typography>
                 <RoadMap />
-            </Box>
-            <Box className="section">
-                <Typography variant="h3" component="h2" align="center">
-                    Custom development
-                </Typography>
-            </Box>
-            <Box className="section">
-                <Typography variant="h3" component="h2" align="center">
-                    About us
-                </Typography>
-                <AboutUs />
             </Box>
             <Box className="section">
                 <Footer />

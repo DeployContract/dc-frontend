@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import "./GetStart.css";
-import logo from "../../../logo.svg";
+import logo from "../../../assets/svg/logo.svg";
 
 export function GetStart() {
     return (
