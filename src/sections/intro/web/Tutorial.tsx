@@ -1,7 +1,10 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import "./Tutorial.css";
+import { Box, Typography } from "@mui/material";
 
 export function Tutorial() {
-    return <Box className="Tutorial"></Box>;
+    return (
+        <Box>
+            <Typography variant="body1" component="p"></Typography>
+        </Box>
+    );
 }

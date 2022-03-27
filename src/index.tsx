@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import App from "./sections/app/App";
-import { WebIntro } from "./sections/intro/web/Intro";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PwaIntro } from "./sections/intro/pwa/Intro";
+import { Web } from "./sections/intro/web/Web";
+import { Pwa } from "./sections/intro/pwa/Pwa";
 import "./index.css";
 
 ReactDOM.render(
@@ -13,8 +13,8 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/">
-                    <Route index element={<WebIntro />} />
-                    <Route path="PWA" element={<PwaIntro />} />
+                    <Route index element={<Web />} />
+                    <Route path="PWA" element={<Pwa />} />
                 </Route>
                 <Route path="app" element={<App />} />
             </Routes>
