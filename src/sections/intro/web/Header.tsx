@@ -33,7 +33,7 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 type Anchor = "top" | "left" | "bottom" | "right";
 const selectedAnchor: Anchor = "top";
 
-const navList: Array<NavigationItem> = [
+const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
         icon: <DashboardIcon />,
         name: "Get start",
@@ -119,7 +119,7 @@ const NavListStable = () => (
         {navList.map((item) => (
             <Button
                 key={item.name}
-                // onClick={item.onClick}
+                // onClick={item.onClick()}
                 sx={{ my: 2, color: "white", display: "block" }}
             >
                 {item.name}
