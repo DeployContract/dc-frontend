@@ -6,6 +6,7 @@ import {
     Typography,
     Icon,
     IconButton,
+    Button,
 } from "@mui/material";
 import Navigation from "./Navigation";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -45,14 +46,20 @@ function Header() {
                             <MenuIcon />
                         </Icon>
                     </IconButton>
-                    <Typography variant="h5">App</Typography>
+                    <Typography sx={{ flexGrow: 1 }} variant="h5">
+                        App
+                    </Typography>
+                    <Button variant="text" sx={{ color: "white" }}>
+                        Connect
+                    </Button>
                 </Toolbar>
             </AppBar>
             <Navigation
                 navWidth={DEFAULT_NAV_WIDTH}
                 open={navOpen}
-                onClose={changeNavOpen}
                 mobileOpen={!navOpen}
+                onClose={changeNavOpen}
+                onOpen={changeNavOpen}
             />
         </Box>
     );
