@@ -12,7 +12,7 @@ import {
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { NavigationItem } from "library";
 
-const navList: Array<NavigationItem> = [
+const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
         icon: (
             <Icon>
