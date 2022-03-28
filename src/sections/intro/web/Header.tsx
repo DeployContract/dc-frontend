@@ -26,36 +26,20 @@ import {
     Typography,
     Toolbar,
 } from "@mui/material";
+import { NavigationItem } from "library";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 type Anchor = "top" | "left" | "bottom" | "right";
 const selectedAnchor: Anchor = "top";
 
-interface IntroNavigationItem {
-    /**
-     * Icon of item
-     */
-    icon?: ReactElement<typeof Icon>;
-
-    /**
-     * Name that will displayed
-     */
-    name: string;
-
-    /**
-     * TODO
-     */
-    onClick?: Function;
-}
-
-const navList: Array<IntroNavigationItem> = [
+const navList: Array<NavigationItem> = [
     {
         icon: <DashboardIcon />,
         name: "Get start",
         onClick: () => {
             alert("ZZZ");
-            window.history.pushState({}, "", "/app");
+            // window.history.pushState({}, "", "/app");
             // window.history.replaceState({}, "", "/app");
         },
     },
