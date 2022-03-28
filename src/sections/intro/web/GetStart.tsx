@@ -3,7 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 import "./GetStart.css";
 import logo from "../../../assets/svg/logo.svg";
 
-export function GetStart() {
+function GetStart() {
     return (
         <Box className="GetStart">
             <img src={logo} className="AppLogo" alt="logo" />
@@ -42,3 +42,5 @@ export function GetStart() {
         </Box>
     );
 }
+
+export default GetStart;

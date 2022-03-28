@@ -69,7 +69,7 @@ const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     },
 ];
 
-export const Header = () => {
+function Header() {
     return (
         <AppBar position="sticky">
             <Container maxWidth="xl">
@@ -107,7 +107,7 @@ export const Header = () => {
             </Container>
         </AppBar>
     );
-};
+}
 
 const NavListStable = () => (
     <Box
@@ -249,3 +249,5 @@ const UserProfile = () => {
         </Box>
     );
 };
+
+export default Header;

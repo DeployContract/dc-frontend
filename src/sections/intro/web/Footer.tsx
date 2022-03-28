@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 
-export function Footer() {
+function Footer() {
     return (
         <Container
             maxWidth="lg"
@@ -143,3 +143,5 @@ export function Footer() {
         </Container>
     );
 }
+
+export default Footer;

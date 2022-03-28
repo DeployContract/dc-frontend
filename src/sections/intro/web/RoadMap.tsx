@@ -12,7 +12,7 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
 
-export function RoadMap() {
+function RoadMap() {
     return (
         <Timeline position="alternate">
             <TimelineItem>
@@ -93,3 +93,5 @@ export function RoadMap() {
         </Timeline>
     );
 }
+
+export default RoadMap;

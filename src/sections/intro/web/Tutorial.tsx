@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Container } from "@mui/material";
 import coinsAmico from "./../../../assets/svg/coins-amico.svg";
+import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
 import Grid from "@mui/material/Grid";
 
 interface TutorListItem {
@@ -19,7 +20,7 @@ const tutorList: Array<TutorListItem> = [
         direction: "row-reverse",
     },
     {
-        icon: coinsAmico,
+        icon: CustomDevelopment,
         title: "Burning Tokens",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
@@ -33,7 +34,7 @@ const tutorList: Array<TutorListItem> = [
         direction: "row",
     },
     {
-        icon: coinsAmico,
+        icon: CustomDevelopment,
         title: "Burning Tokens",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
@@ -41,7 +42,7 @@ const tutorList: Array<TutorListItem> = [
     },
 ];
 
-export function Tutorial() {
+function Tutorial() {
     return (
         <Container
             maxWidth="lg"
@@ -103,3 +104,5 @@ export function Tutorial() {
         </Container>
     );
 }
+
+export default Tutorial;

@@ -26,7 +26,7 @@ const rows = [
     createData("Test Net", 0, 0, 0, 0, "ETH"),
 ];
 
-export function Pricing() {
+function Pricing() {
     return (
         <Container
             maxWidth="md"
@@ -108,3 +108,5 @@ export function Pricing() {
         </Container>
     );
 }
+
+export default Pricing;
