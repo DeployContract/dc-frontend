@@ -10,7 +10,7 @@ import { RoadMap } from "./RoadMap";
 import { Footer } from "./Footer";
 import "./Web.css";
 
-export function Web() {
+function Web() {
     return (
         <Box>
             <Header />
@@ -45,3 +45,5 @@ export function Web() {
         </Box>
     );
 }
+
+export default Web;

@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import App from "./sections/app/App";
-import { Web } from "./sections/intro/web/Web";
-import { Pwa } from "./sections/intro/pwa/Pwa";
+import Web from "./sections/intro/web/Web";
+import Pwa from "./sections/intro/pwa/Pwa";
 import "./index.css";
 
 ReactDOM.render(
