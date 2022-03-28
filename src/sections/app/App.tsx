@@ -7,7 +7,6 @@ function App() {
     return (
         <Box sx={{ display: "flex" }}>
             <Header />
-            <Navigation />
         </Box>
     );
 }
