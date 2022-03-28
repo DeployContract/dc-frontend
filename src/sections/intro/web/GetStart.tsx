@@ -32,7 +32,7 @@ export function GetStart() {
                     ERC20, BEP20 Token Generator.
                 </Typography>
                 <Button variant="contained" size="large">
-                    Get Start
+                    Get Started
                 </Button>
                 <Typography variant="subtitle1" component="div">
                     <span>or </span>

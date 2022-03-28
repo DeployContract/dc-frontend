@@ -207,6 +207,10 @@ const NavDrawer = () => {
                     open={state[selectedAnchor]}
                     onClose={toggleDrawer(selectedAnchor, false)}
                     onOpen={toggleDrawer(selectedAnchor, true)}
+                    variant="temporary"
+                    ModalProps={{
+                        keepMounted: true,
+                    }}
                 >
                     {list(selectedAnchor)}
                 </SwipeableDrawer>

@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { GetStart } from "./GetStart";
 import { Tutorial } from "./Tutorial";
 import { Pricing } from "./Pricing";
+import { CustomContract } from "./CustomContract";
 import { Faq } from "../faq/Faq";
 import { RoadMap } from "./RoadMap";
 import { Footer } from "./Footer";
@@ -24,9 +25,7 @@ export function Web() {
                 <Pricing />
             </Box>
             <Box className="section">
-                <Typography variant="h3" component="h2" align="center">
-                    Custom Contract
-                </Typography>
+                <CustomContract />
             </Box>
             <Box className="section">
                 <Typography variant="h3" component="h2" align="center">
