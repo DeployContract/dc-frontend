@@ -13,11 +13,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 /**
  * Default navigation options
  */
-const DEFAULT_NAV_STATE = true;
-const DEFAULT_NAV_WIDTH = 300;
+const DEFAULT_NAV_OPEN_STATE = true;
+const DEFAULT_NAV_WIDTH = 250;
 
 function Header() {
-    const [navOpen, setNavOpen] = React.useState<boolean>(DEFAULT_NAV_STATE);
+    const [navOpen, setNavOpen] = React.useState<boolean>(
+        DEFAULT_NAV_OPEN_STATE
+    );
 
     const changeNavOpen = () => setNavOpen(!navOpen);
 
@@ -46,7 +48,12 @@ function Header() {
                     <Typography variant="h5">App</Typography>
                 </Toolbar>
             </AppBar>
-            <Navigation navWidth={300} open={navOpen} onClose={changeNavOpen} />
+            <Navigation
+                navWidth={DEFAULT_NAV_WIDTH}
+                open={navOpen}
+                onClose={changeNavOpen}
+                mobileOpen={!navOpen}
+            />
         </Box>
     );
 }

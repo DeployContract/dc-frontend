@@ -54,6 +54,11 @@ interface NavProps {
     open: boolean;
 
     /**
+     * Navigation open value on mobile view
+     */
+    mobileOpen: boolean;
+
+    /**
      * Navigation width
      */
     navWidth: number;
@@ -71,7 +76,7 @@ function Navigation(props: NavProps) {
             {/* For Mobile view */}
             <Hidden mdUp>
                 <Drawer
-                    open={props.open}
+                    open={props.mobileOpen}
                     variant="temporary"
                     sx={{
                         display: { xs: "block", sm: "none" },
