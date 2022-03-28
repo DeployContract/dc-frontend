@@ -4,7 +4,7 @@ import coinsAmico from "./../../../assets/svg/coins-amico.svg";
 import Grid from "@mui/material/Grid";
 
 interface TutorListItem {
-    icon: unknown;
+    icon: string;
     title: string;
     description: string;
     direction: string;
@@ -64,7 +64,7 @@ export function Tutorial() {
                         sx={{ textAlign: "center" }}
                     >
                         <img
-                            src={coinsAmico}
+                            src={item.icon}
                             alt="Coins animate"
                             style={{ maxWidth: 300 }}
                         />
