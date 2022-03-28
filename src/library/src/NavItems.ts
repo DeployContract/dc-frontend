@@ -1,19 +1,16 @@
-import { ReactElement } from "react";
-import { Icon } from "@mui/material";
-
-export interface NavigationItem {
+export interface NavigationItem<T, U = string, V = Function> {
     /**
      * Icon of item
      */
-    icon?: ReactElement<typeof Icon>;
+    icon?: T;
 
     /**
      * Name that will displayed
      */
-    name: string;
+    name: U;
 
     /**
      * TODO
      */
-    onClick?: Function;
+    onClick?: V;
 }
