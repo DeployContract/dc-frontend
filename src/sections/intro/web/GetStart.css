@@ -11,7 +11,7 @@
     background-color: #e5e5f7;
     background-image: radial-gradient(#444cf7c0 0.5px, #e5e5f7 0.5px);
     background-size: 10px 10px;
-    box-shadow: inset 0px -11px 16px -10px #ccc;
+    box-shadow: inset 0px -11px 16px -10px #7d7d7d90;
 }
 /* @media only screen and (min-width: 600px) {
     .GetStart {
