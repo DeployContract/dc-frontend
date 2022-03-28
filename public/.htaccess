@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# remove www from host
+RewriteCond %{HTTP_HOST} ^www\.(.+)
+RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+
+# force HTTPS
+RewriteCond %{HTTPS} =off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Don't rewrite files
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+# Rewrite everything else to index.html
+RewriteRule ^ index.html [L]
