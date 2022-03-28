@@ -1,24 +1,30 @@
 import React, { ReactElement } from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import SchoolIcon from "@mui/icons-material/School";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import HelpIcon from "@mui/icons-material/Help";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import InfoIcon from "@mui/icons-material/Info";
 import {
+    Avatar,
+    AppBar,
     Box,
+    Button,
+    Container,
+    Icon,
+    IconButton,
     List,
     ListItem,
     ListItemText,
-    Icon,
     ListItemIcon,
+    Menu,
+    MenuItem,
+    SwipeableDrawer,
+    Tooltip,
+    Typography,
+    Toolbar,
 } from "@mui/material";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -45,12 +51,8 @@ interface IntroNavigationItem {
 
 const navList: Array<IntroNavigationItem> = [
     {
-        icon: (
-            <Icon>
-                <DashboardIcon />
-            </Icon>
-        ),
-        name: "Get Start Now",
+        icon: <DashboardIcon />,
+        name: "Get start",
         onClick: () => {
             alert("ZZZ");
             window.history.pushState({}, "", "/app");
@@ -58,16 +60,34 @@ const navList: Array<IntroNavigationItem> = [
         },
     },
     {
+        icon: <SchoolIcon />,
         name: "Tutorials",
     },
     {
-        name: "About Us",
+        icon: <LocalOfferIcon />,
+        name: "Pricing",
+    },
+    {
+        icon: <HelpIcon />,
+        name: "FAQ",
+    },
+    {
+        icon: <DirectionsIcon />,
+        name: "Road map",
+    },
+    {
+        icon: <ShoppingCartIcon />,
+        name: "Custom",
+    },
+    {
+        icon: <InfoIcon />,
+        name: "About us",
     },
 ];
 
 export const Header = () => {
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
@@ -84,7 +104,7 @@ export const Header = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
                     >
-                        DepConChain or CoToCh
+                        Cotoch
                     </Typography>
                     <Typography
                         variant="h6"
@@ -95,7 +115,7 @@ export const Header = () => {
                             display: { xs: "flex", md: "none" },
                         }}
                     >
-                        CoToCh
+                        Cotoch
                     </Typography>
                     <NavListStable />
                     <UserProfile />

@@ -1,0 +1,17 @@
+.section {
+    min-height: 200px;
+    padding: 40px 0;
+}
+
+.section:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.section:nth-child(even) {
+    background-color: #f1f2fb;
+}
+
+.section:last-child {
+    background-color: #011440;
+    color: #fff;
+}
