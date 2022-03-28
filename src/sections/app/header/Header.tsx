@@ -6,6 +6,7 @@ import {
     Typography,
     Icon,
     IconButton,
+    Button,
 } from "@mui/material";
 import Navigation from "./Navigation";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,11 +14,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 /**
  * Default navigation options
  */
-const DEFAULT_NAV_STATE = true;
-const DEFAULT_NAV_WIDTH = 300;
+const DEFAULT_NAV_OPEN_STATE = true;
+const DEFAULT_NAV_WIDTH = 250;
 
 function Header() {
-    const [navOpen, setNavOpen] = React.useState<boolean>(DEFAULT_NAV_STATE);
+    const [navOpen, setNavOpen] = React.useState<boolean>(
+        DEFAULT_NAV_OPEN_STATE
+    );
 
     const changeNavOpen = () => setNavOpen(!navOpen);
 
@@ -43,10 +46,21 @@ function Header() {
                             <MenuIcon />
                         </Icon>
                     </IconButton>
-                    <Typography variant="h5">App</Typography>
+                    <Typography sx={{ flexGrow: 1 }} variant="h5">
+                        App
+                    </Typography>
+                    <Button variant="text" sx={{ color: "white" }}>
+                        Connect
+                    </Button>
                 </Toolbar>
             </AppBar>
-            <Navigation navWidth={300} open={navOpen} onClose={changeNavOpen} />
+            <Navigation
+                navWidth={DEFAULT_NAV_WIDTH}
+                open={navOpen}
+                mobileOpen={!navOpen}
+                onClose={changeNavOpen}
+                onOpen={changeNavOpen}
+            />
         </Box>
     );
 }
