@@ -1,4 +1,4 @@
-export interface NavigationItem<T, U = string, V = Function, W = string> {
+export interface NavigationItem<T, U = string, V = any, W = string> {
     /**
      * Name that will displayed
      */
