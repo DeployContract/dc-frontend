@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Typography, Button } from "@mui/material";
 import "./GetStart.css";
 import logo from "../../../assets/svg/logo.svg";
 
-export function GetStart() {
+function GetStart() {
     return (
         <Box className="GetStart">
             <img src={logo} className="AppLogo" alt="logo" />
@@ -31,14 +32,18 @@ export function GetStart() {
                 <Typography variant="subtitle1" component="div">
                     ERC20, BEP20 Token Generator.
                 </Typography>
-                <Button variant="contained" size="large">
-                    Get Started
-                </Button>
+                <Link to="/app">
+                    <Button variant="contained" size="large">
+                        Get Started
+                    </Button>
+                </Link>
                 <Typography variant="subtitle1" component="div">
                     <span>or </span>
-                    <a href="#">Learn More!</a>
+                    <a href="#Tutorials">Learn More!</a>
                 </Typography>
             </Box>
         </Box>
     );
 }
+
+export default GetStart;

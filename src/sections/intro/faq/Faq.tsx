@@ -6,7 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export function Faq() {
+function Faq() {
     return (
         <Container
             maxWidth="md"
@@ -97,3 +97,5 @@ export function Faq() {
         </Container>
     );
 }
+
+export default Faq;

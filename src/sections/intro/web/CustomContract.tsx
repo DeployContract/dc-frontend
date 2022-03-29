@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material";
 import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
 import Grid from "@mui/material/Grid";
 
-export function CustomContract() {
+function CustomContract() {
     return (
         <Container
             maxWidth="lg"
@@ -59,3 +59,5 @@ export function CustomContract() {
         </Container>
     );
 }
+
+export default CustomContract;

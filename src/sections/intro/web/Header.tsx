@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SchoolIcon from "@mui/icons-material/School";
@@ -37,39 +38,41 @@ const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
         icon: <DashboardIcon />,
         name: "Get start",
-        onClick: () => {
-            alert("ZZZ");
-            // window.history.pushState({}, "", "/app");
-            // window.history.replaceState({}, "", "/app");
-        },
+        // onClick: () => {
+        //     alert("ZZZ");
+        //     // window.history.pushState({}, "", "/app");
+        //     // window.history.replaceState({}, "", "/app");
+        // },
+        path: "/app",
     },
     {
         icon: <SchoolIcon />,
         name: "Tutorials",
+        path: "#Tutorials",
     },
     {
         icon: <LocalOfferIcon />,
         name: "Pricing",
-    },
-    {
-        icon: <HelpIcon />,
-        name: "FAQ",
-    },
-    {
-        icon: <DirectionsIcon />,
-        name: "Road map",
+        path: "#Pricing",
     },
     {
         icon: <ShoppingCartIcon />,
         name: "Custom",
+        path: "#CustomContract",
     },
     {
-        icon: <InfoIcon />,
-        name: "About us",
+        icon: <HelpIcon />,
+        name: "FAQ",
+        path: "#FAQ",
+    },
+    {
+        icon: <DirectionsIcon />,
+        name: "Road map",
+        path: "#Roadmap",
     },
 ];
 
-export const Header = () => {
+function Header() {
     return (
         <AppBar position="sticky">
             <Container maxWidth="xl">
@@ -107,7 +110,7 @@ export const Header = () => {
             </Container>
         </AppBar>
     );
-};
+}
 
 const NavListStable = () => (
     <Box
@@ -117,13 +120,14 @@ const NavListStable = () => (
         }}
     >
         {navList.map((item) => (
-            <Button
-                key={item.name}
-                // onClick={item.onClick()}
-                sx={{ my: 2, color: "white", display: "block" }}
-            >
-                {item.name}
-            </Button>
+            <a href={item.path || "/notfound"}>
+                <Button
+                    key={item.name}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                >
+                    {item.name}
+                </Button>
+            </a>
         ))}
     </Box>
 );
@@ -249,3 +253,5 @@ const UserProfile = () => {
         </Box>
     );
 };
+
+export default Header;
