@@ -1,17 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
+import Info from "./Info";
 
 function Main() {
     return (
-        <Box>
-            {/* <Routes>
-                <Route path="app/dashboard">
-                    <h1>Hello world</h1>
-                </Route>
-            </Routes> */}
-            <h1>Hello world</h1>
-        </Box>
+        <Routes>
+            <Route path="info" element={<Info />} />
+        </Routes>
     );
 }
 

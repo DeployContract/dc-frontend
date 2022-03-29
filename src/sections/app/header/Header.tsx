@@ -8,40 +8,26 @@ import {
     IconButton,
     Button,
 } from "@mui/material";
-import Navigation from "./Navigation";
 import MenuIcon from "@mui/icons-material/Menu";
 
-/**
- * Default navigation options
- */
-const DEFAULT_NAV_OPEN_STATE = true;
-const DEFAULT_NAV_WIDTH = 250;
+interface HeaderProps {
+    /**
+     * Styles for sx prop
+     */
+    styles: object | null;
 
-function Header() {
-    const [navOpen, setNavOpen] = React.useState<boolean>(
-        DEFAULT_NAV_OPEN_STATE
-    );
+    /**
+     * Function when clicked On menuIcon
+     */
+    menuOpenOnClick: any;
+}
 
-    const changeNavOpen = () => setNavOpen(!navOpen);
-
+function Header(props: HeaderProps) {
     return (
         <Box>
-            <AppBar
-                position="fixed"
-                sx={
-                    navOpen
-                        ? {
-                              width: {
-                                  sm: `calc(100% - ${DEFAULT_NAV_WIDTH}px)`,
-                              },
-                              ml: { sm: `${DEFAULT_NAV_WIDTH}px` },
-                              transition: "all 0.2s",
-                          }
-                        : null
-                }
-            >
+            <AppBar position="fixed" sx={props.styles}>
                 <Toolbar>
-                    <IconButton onClick={changeNavOpen}>
+                    <IconButton onClick={props.menuOpenOnClick}>
                         <Icon>
                             <MenuIcon />
                         </Icon>
@@ -54,13 +40,6 @@ function Header() {
                     </Button>
                 </Toolbar>
             </AppBar>
-            <Navigation
-                navWidth={DEFAULT_NAV_WIDTH}
-                open={navOpen}
-                mobileOpen={!navOpen}
-                onClose={changeNavOpen}
-                onOpen={changeNavOpen}
-            />
         </Box>
     );
 }
