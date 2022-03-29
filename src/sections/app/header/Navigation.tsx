@@ -36,12 +36,15 @@ const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     },
 ];
 
-const NavItems = (
+/**
+ * @param listItemOnClick This is a global onclick that will apply to all buttons
+ */
+const NavItems = (listItemOnClick?: any) => (
     <List>
         {navList.map((item) => {
             return (
                 <Link to={item.path || "/notfound"}>
-                    <ListItem button>
+                    <ListItem button onClick={listItemOnClick || null}>
                         {item.icon ? (
                             <ListItemIcon>{item.icon}</ListItemIcon>
                         ) : null}
@@ -103,7 +106,7 @@ function Navigation(props: NavProps) {
                     onClose={props.onClose}
                     onOpen={props.onOpen}
                 >
-                    {NavItems}
+                    {NavItems(props.onClose)}
                 </SwipeableDrawer>
             </Hidden>
 
@@ -120,7 +123,7 @@ function Navigation(props: NavProps) {
                     }}
                     onClose={props.onClose}
                 >
-                    {NavItems}
+                    {NavItems()}
                 </Drawer>
             </Hidden>
         </Box>
