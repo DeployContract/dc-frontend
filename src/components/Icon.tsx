@@ -9,11 +9,7 @@ interface IconProps {
 }
 
 function Icon(props: IconProps) {
-    return (
-        <div>
-            <img src={iconSvg} alt="Icon" style={props.style} />
-        </div>
-    );
+    return <img src={iconSvg} alt="Icon" style={props.style} />;
 }
 
 export default Icon;
