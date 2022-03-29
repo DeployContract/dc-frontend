@@ -44,7 +44,10 @@ const NavItems = (listItemOnClick?: any) => (
         {navList.map((item) => {
             return (
                 <Link to={item.path || "/notfound"}>
-                    <ListItem button onClick={listItemOnClick || null}>
+                    <ListItem
+                        button
+                        onClick={listItemOnClick || null || item.onClick}
+                    >
                         {item.icon ? (
                             <ListItemIcon>{item.icon}</ListItemIcon>
                         ) : null}
