@@ -49,7 +49,7 @@ function App() {
             />
             <Container
                 sx={navOpen ? responsiveWidthStyle : null}
-                style={{ marginTop: "60px" }}
+                style={{ marginTop: "70px" }}
             >
                 <Main />
             </Container>
