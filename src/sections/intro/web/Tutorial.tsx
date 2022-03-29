@@ -54,7 +54,7 @@ function Tutorial() {
                 <Grid
                     container
                     direction={index % 2 ? "row-reverse" : "row"}
-                    style={{ alignItems: "center" }}
+                    alignItems="center"
                     sx={{ mt: 5 }}
                 >
                     <Grid
@@ -66,7 +66,7 @@ function Tutorial() {
                     >
                         <img
                             src={item.icon}
-                            alt="Coins animate"
+                            alt={item.title}
                             style={{ maxWidth: 300 }}
                         />
                     </Grid>
