@@ -16,7 +16,7 @@ ReactDOM.render(
                     <Route index element={<Web />} />
                     <Route path="PWA" element={<Pwa />} />
                 </Route>
-                <Route path="app" element={<App />} />
+                <Route path="/app/*" element={<App />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,
