@@ -1,44 +1,42 @@
 import React from "react";
 import { Typography, Container } from "@mui/material";
-import coinsAmico from "./../../../assets/svg/coins-amico.svg";
+import CoinsAmico from "./../../../assets/svg/coins-amico.svg";
 import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
+import Spreadsheets from "./../../../assets/svg/Spreadsheets-amico.svg";
+import CryptoPortfolio from "./../../../assets/svg/CryptoPortfolio.svg";
+import Proggramer from "./../../../assets/svg/Programmer-rafiki.svg";
 import Grid from "@mui/material/Grid";
 
 interface TutorListItem {
     icon: string;
     title: string;
     description: string;
-    direction: string;
 }
 
 const tutorList: Array<TutorListItem> = [
     {
-        icon: coinsAmico,
-        title: "Minting Tokens",
+        icon: CryptoPortfolio,
+        title: "ERC20 Tokens",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
-        direction: "row-reverse",
     },
     {
-        icon: CustomDevelopment,
-        title: "Burning Tokens",
+        icon: Proggramer,
+        title: "Customize your Token",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
-        direction: "row",
     },
     {
-        icon: coinsAmico,
-        title: "Minting Tokens",
+        icon: CoinsAmico,
+        title: "Automaticaly Compile & Deploy",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
-        direction: "row",
     },
     {
-        icon: CustomDevelopment,
-        title: "Burning Tokens",
+        icon: Spreadsheets,
+        title: "Manage your Tokens",
         description:
             "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
-        direction: "row",
     },
 ];
 
@@ -53,7 +51,7 @@ function Tutorial() {
             {tutorList.map((item, index) => (
                 <Grid
                     container
-                    direction={index % 2 ? "row-reverse" : "row"}
+                    direction={index % 2 ? "row" : "row-reverse"}
                     alignItems="center"
                     sx={{ mt: 5 }}
                 >
@@ -67,7 +65,7 @@ function Tutorial() {
                         <img
                             src={item.icon}
                             alt={item.title}
-                            style={{ maxWidth: 300 }}
+                            style={{ maxWidth: 400 }}
                         />
                     </Grid>
                     <Grid item xs={12} md={1} lg={2}></Grid>

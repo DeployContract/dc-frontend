@@ -7,7 +7,6 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import HelpIcon from "@mui/icons-material/Help";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import InfoIcon from "@mui/icons-material/Info";
 import {
     Avatar,
     AppBar,
@@ -28,6 +27,7 @@ import {
     Toolbar,
 } from "@mui/material";
 import { NavigationItem } from "library";
+import Connect from "./../../../components/Connect";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -38,11 +38,6 @@ const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
         icon: <DashboardIcon />,
         name: "Get start",
-        // onClick: () => {
-        //     alert("ZZZ");
-        //     // window.history.pushState({}, "", "/app");
-        //     // window.history.replaceState({}, "", "/app");
-        // },
         path: "/app",
     },
     {
@@ -105,7 +100,7 @@ function Header() {
                         Cotoch
                     </Typography>
                     <NavListStable />
-                    <UserProfile />
+                    <Connect />
                 </Toolbar>
             </Container>
         </AppBar>

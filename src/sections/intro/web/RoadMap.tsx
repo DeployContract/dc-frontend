@@ -6,10 +6,10 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
+import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 
 function RoadMap() {
@@ -22,20 +22,20 @@ function RoadMap() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    9:30 am
+                    21 March 2022
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
-                    <TimelineDot>
-                        <FastfoodIcon />
+                    <TimelineDot color="primary">
+                        <LightbulbIcon />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Eat
+                        Proposal
                     </Typography>
-                    <Typography>Because you need strength</Typography>
+                    <Typography>Contracts for everyone</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -44,50 +44,50 @@ function RoadMap() {
                     variant="body2"
                     color="text.secondary"
                 >
-                    10:00 am
+                    Now
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
-                    <TimelineDot color="primary">
+                    <TimelineDot color="secondary">
                         <LaptopMacIcon />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Code
+                        Development
                     </Typography>
-                    <Typography>Because it&apos;s awesome!</Typography>
+                    <Typography>We started development!</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
                 <TimelineSeparator>
                     <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
-                        <HotelIcon />
-                    </TimelineDot>
-                    <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Sleep
-                    </Typography>
-                    <Typography>Because you need rest</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-                    <TimelineDot color="secondary">
-                        <RepeatIcon />
+                        <CurrencyBitcoinIcon />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Repeat
+                        ERC20 Tokens
                     </Typography>
-                    <Typography>Because this is the life you love!</Typography>
+                    <Typography>Support of ERC20 standard</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <ExpandMoreIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: "12px", px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        More!
+                    </Typography>
+                    <Typography>Then we bringing you more</Typography>
                 </TimelineContent>
             </TimelineItem>
         </Timeline>
