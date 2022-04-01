@@ -7,17 +7,17 @@ import "./GetStart.css";
 function GetStart() {
     return (
         <Box className="GetStart">
-            <Container maxWidth="lg" style={{ padding: "50px 10px" }}>
+            <Container maxWidth="lg" style={{ padding: "60px 20px" }}>
                 <Grid
                     container
                     justifyContent="center"
                     alignItems="center"
-                    spacing={1}
+                    spacing={3}
                 >
                     <Grid
                         item
                         xs={12}
-                        md={6}
+                        md={5}
                         lg={5}
                         style={{ textAlign: "center" }}
                     >
@@ -25,43 +25,46 @@ function GetStart() {
                             src={logo}
                             alt="logo"
                             style={{
-                                width: "350px",
-                                maxWidth: "80%",
+                                padding: "0 5%",
+                                margin: 0,
+                                width: "90%",
+                                maxWidth: "60vw",
                             }}
                         />
                     </Grid>
-                    <Grid item xs={12} md={6} lg={7}>
+                    <Grid item xs={12} md={7} lg={7}>
                         <Stack
                             justifyContent="center"
                             alignItems="center"
-                            spacing={1.5}
+                            spacing={2}
                         >
                             <Typography
                                 variant="h3"
                                 component="h1"
                                 sx={{
-                                    mr: 2,
                                     display: { xs: "none", lg: "flex" },
                                 }}
                             >
-                                Deploy Contract to Chain
+                                Deploy Contract to BlockChain
                             </Typography>
                             <Typography
                                 variant="h5"
                                 component="h1"
                                 sx={{
-                                    flexGrow: 1,
                                     display: { xs: "flex", lg: "none" },
                                 }}
                             >
-                                Deploy Contract to Chain
+                                Deploy Contract to BlockChain
                             </Typography>
                             <Typography
                                 variant="subtitle1"
                                 component="div"
-                                align="center"
+                                align="justify"
+                                style={{ textAlignLast: "center" }}
                             >
-                                Create contract, deploy on blockchain.
+                                No more coding need with Cotoch, a better way to
+                                create standard contracts and deploy on
+                                blockchain.
                                 <br />
                                 ERC20, BEP20 Token Generator.
                             </Typography>

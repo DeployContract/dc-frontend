@@ -8,7 +8,6 @@ import HelpIcon from "@mui/icons-material/Help";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import {
-    Avatar,
     AppBar,
     Box,
     Button,
@@ -19,20 +18,13 @@ import {
     ListItem,
     ListItemText,
     ListItemIcon,
-    Menu,
-    MenuItem,
     SwipeableDrawer,
-    Tooltip,
+    Stack,
     Typography,
     Toolbar,
 } from "@mui/material";
 import { NavigationItem } from "library";
 import Connect from "./../../../components/Connect";
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-type Anchor = "top" | "left" | "bottom" | "right";
-const selectedAnchor: Anchor = "top";
 
 const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
@@ -71,49 +63,39 @@ function Header() {
     return (
         <AppBar position="sticky">
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar style={{ padding: 0 }}>
                     <Box
                         sx={{
-                            flexGrow: 1,
                             display: { xs: "flex", md: "none" },
                         }}
                     >
                         <NavDrawer />
                     </Box>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-                    >
-                        Cotoch
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
+                    <SiteName />
+                    <Box
                         sx={{
-                            flexGrow: 1,
-                            display: { xs: "flex", md: "none" },
+                            display: { xs: "none", md: "flex" },
                         }}
                     >
-                        Cotoch
-                    </Typography>
-                    <NavListStable />
-                    <Connect />
+                        <NavListStable />
+                    </Box>
+                    <Box style={{ marginInlineStart: "auto" }}>
+                        <Connect />
+                    </Box>
                 </Toolbar>
             </Container>
         </AppBar>
     );
 }
 
+const SiteName = () => (
+    <Typography variant="h5" noWrap component="h1" sx={{ mr: 2 }}>
+        Cotoch
+    </Typography>
+);
+
 const NavListStable = () => (
-    <Box
-        sx={{
-            flexGrow: 1,
-            display: { xs: "none", md: "flex" },
-        }}
-    >
+    <Stack direction="row">
         {navList.map((item) => (
             <a href={item.path || "/notfound"}>
                 <Button
@@ -124,20 +106,16 @@ const NavListStable = () => (
                 </Button>
             </a>
         ))}
-    </Box>
+    </Stack>
 );
 
 const NavDrawer = () => {
     const [state, setState] = React.useState({
         top: false,
-        left: false,
-        bottom: false,
-        right: false,
     });
 
     const toggleDrawer =
-        (anchor: Anchor, open: boolean) =>
-        (event: React.KeyboardEvent | React.MouseEvent) => {
+        (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
             if (
                 event &&
                 event.type === "keydown" &&
@@ -147,105 +125,56 @@ const NavDrawer = () => {
                 return;
             }
 
-            setState({ ...state, [anchor]: open });
+            setState({ ...state, ["top"]: open });
         };
 
-    const list = (anchor: Anchor) => (
-        <Box
-            sx={{
-                width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-            }}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {navList.map((item) => (
-                    <ListItem button>
-                        {item.icon ? (
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                        ) : null}
-                        <ListItemText>{item.name}</ListItemText>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
+    const list = () => (
+        <List>
+            {navList.map((item) => (
+                <ListItem button>
+                    {item.icon ? (
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                    ) : null}
+                    <ListItemText>{item.name}</ListItemText>
+                </ListItem>
+            ))}
+        </List>
     );
 
     return (
-        <div>
-            <React.Fragment key={selectedAnchor}>
-                <IconButton
-                    size="large"
-                    aria-label="account of current user"
-                    aria-controls="menu-appbar"
-                    aria-haspopup="true"
-                    onClick={toggleDrawer("top", true)}
-                    color="inherit"
-                >
-                    <MenuIcon />
-                </IconButton>
-                <SwipeableDrawer
-                    anchor={selectedAnchor}
-                    open={state[selectedAnchor]}
-                    onClose={toggleDrawer(selectedAnchor, false)}
-                    onOpen={toggleDrawer(selectedAnchor, true)}
-                    variant="temporary"
-                    ModalProps={{
-                        keepMounted: true,
-                    }}
-                >
-                    {list(selectedAnchor)}
-                </SwipeableDrawer>
-            </React.Fragment>
-        </div>
-    );
-};
-
-const UserProfile = () => {
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-        null
-    );
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-    return (
-        <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                        alt="Remy Sharp"
-                        src="/static/images/avatar/2.jpg"
-                    />
-                </IconButton>
-            </Tooltip>
-            <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
+        <React.Fragment key={"top"}>
+            <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={toggleDrawer(true)}
+                color="inherit"
             >
-                {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                ))}
-            </Menu>
-        </Box>
+                <MenuIcon sx={{ fontSize: 26 }} />
+            </IconButton>
+            <SwipeableDrawer
+                anchor={"top"}
+                open={state["top"]}
+                onClose={toggleDrawer(false)}
+                onOpen={toggleDrawer(true)}
+                variant="temporary"
+                ModalProps={{
+                    keepMounted: true,
+                }}
+            >
+                <Box
+                    sx={{
+                        width: "auto",
+                    }}
+                    role="presentation"
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}
+                >
+                    {list()}
+                </Box>
+            </SwipeableDrawer>
+        </React.Fragment>
     );
 };
 

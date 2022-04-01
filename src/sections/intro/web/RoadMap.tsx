@@ -8,8 +8,9 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import CodeIcon from "@mui/icons-material/Code";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Typography from "@mui/material/Typography";
 
 function RoadMap() {
@@ -41,6 +42,29 @@ function RoadMap() {
             <TimelineItem>
                 <TimelineOppositeContent
                     sx={{ m: "auto 0" }}
+                    align="right"
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    30 March 2022
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary">
+                        <LaptopMacIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: "12px", px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Research
+                    </Typography>
+                    <Typography>ّFirst researchs</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: "auto 0" }}
                     variant="body2"
                     color="text.secondary"
                 >
@@ -49,7 +73,7 @@ function RoadMap() {
                 <TimelineSeparator>
                     <TimelineConnector />
                     <TimelineDot color="secondary">
-                        <LaptopMacIcon />
+                        <CodeIcon />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
@@ -79,7 +103,7 @@ function RoadMap() {
                 <TimelineSeparator>
                     <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
-                        <ExpandMoreIcon />
+                        <MoreHorizIcon />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
