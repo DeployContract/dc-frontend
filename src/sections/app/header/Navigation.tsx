@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import {
     Box,
     Drawer,
@@ -10,31 +10,8 @@ import {
     ListItemIcon,
     Hidden,
 } from "@mui/material";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
-import { NavigationItem } from "library";
-
-const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
-    {
-        icon: (
-            <Icon>
-                <DashboardIcon />
-            </Icon>
-        ),
-        name: "Dashboard",
-        path: "/app",
-    },
-    {
-        icon: (
-            <Icon>
-                <InfoIcon />
-            </Icon>
-        ),
-        name: "Info",
-        path: "/app/info",
-    },
-];
+import { navList } from "./NavList";
 
 /**
  * @param listItemOnClick This is a global onclick that will apply to all buttons
