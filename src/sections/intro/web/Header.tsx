@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SchoolIcon from "@mui/icons-material/School";
