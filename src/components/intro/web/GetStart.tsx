@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material";
 import logo from "../../../assets/svg/logo.svg";
-import "./GetStart.css";
 
 function GetStart() {
     return (

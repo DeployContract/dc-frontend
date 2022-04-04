@@ -6,9 +6,9 @@ import {
     Typography,
     Icon,
     IconButton,
-    Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import Connect from "../../common/connect/Connect";
 
 interface HeaderProps {
     /**
@@ -35,9 +35,7 @@ function Header(props: HeaderProps) {
                     <Typography sx={{ flexGrow: 1 }} variant="h5">
                         App
                     </Typography>
-                    <Button variant="text" sx={{ color: "white" }}>
-                        Connect
-                    </Button>
+                    <Connect />
                 </Toolbar>
             </AppBar>
         </Box>
