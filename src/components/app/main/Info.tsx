@@ -8,7 +8,7 @@ import {
     Button,
     CardMedia,
 } from "@mui/material";
-import Icon from "../../../components/Icon";
+import Icon from "../../common/Icon";
 
 function Info() {
     return (

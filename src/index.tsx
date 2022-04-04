@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./sections/app/App";
-import Intro from "./sections/intro/Intro";
+import App from "./components/app/App";
+import Intro from "./components/intro/Intro";
 import "./index.css";
 
 ReactDOM.render(
