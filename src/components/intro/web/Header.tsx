@@ -109,12 +109,10 @@ const NavListStable = () => (
 );
 
 const NavDrawer = () => {
-    const [state, setState] = React.useState({
-        top: false,
-    });
+    const [drawerState, setState] = React.useState(false);
 
     const toggleDrawer =
-        (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+        (state: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
             if (
                 event &&
                 event.type === "keydown" &&
@@ -124,18 +122,20 @@ const NavDrawer = () => {
                 return;
             }
 
-            setState({ ...state, ["top"]: open });
+            setState(state);
         };
 
     const list = () => (
         <List>
             {navList.map((item) => (
-                <ListItem button>
-                    {item.icon ? (
-                        <ListItemIcon>{item.icon}</ListItemIcon>
-                    ) : null}
-                    <ListItemText>{item.name}</ListItemText>
-                </ListItem>
+                <a href={item.path || "/notfound"}>
+                    <ListItem button>
+                        {item.icon ? (
+                            <ListItemIcon>{item.icon}</ListItemIcon>
+                        ) : null}
+                        <ListItemText>{item.name}</ListItemText>
+                    </ListItem>
+                </a>
             ))}
         </List>
     );
@@ -144,9 +144,6 @@ const NavDrawer = () => {
         <React.Fragment key={"top"}>
             <IconButton
                 size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
                 onClick={toggleDrawer(true)}
                 color="inherit"
             >
@@ -154,7 +151,7 @@ const NavDrawer = () => {
             </IconButton>
             <SwipeableDrawer
                 anchor={"top"}
-                open={state["top"]}
+                open={drawerState}
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(true)}
                 variant="temporary"

@@ -27,13 +27,20 @@ function Header(props: HeaderProps) {
         <Box>
             <AppBar position="fixed" sx={props.styles}>
                 <Toolbar>
-                    <IconButton onClick={props.menuOpenOnClick}>
-                        <Icon>
-                            <MenuIcon />
-                        </Icon>
+                    <IconButton
+                        size="large"
+                        onClick={props.menuOpenOnClick}
+                        color="inherit"
+                    >
+                        <MenuIcon sx={{ fontSize: 26 }} />
                     </IconButton>
-                    <Typography sx={{ flexGrow: 1 }} variant="h5">
-                        App
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="h1"
+                        sx={{ flexGrow: 1 }}
+                    >
+                        Cotoch
                     </Typography>
                     <Connect />
                 </Toolbar>

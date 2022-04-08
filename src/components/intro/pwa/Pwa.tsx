@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Button, Container, Stack } from "@mui/material";
+import SwipeableContent from "./SwipeableContent";
 import logo from "../../../assets/svg/logo.svg";
 import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
 
@@ -10,7 +11,7 @@ const pwaIntroPassed = () => {
 
 function Pwa() {
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="xs">
             <Stack
                 direction="column"
                 justifyContent="space-between"
@@ -29,29 +30,7 @@ function Pwa() {
                         Cotoch
                     </Typography>
                 </Stack>
-                <Stack direction="column" alignItems="center" spacing={1}>
-                    <img
-                        src={CustomDevelopment}
-                        alt=""
-                        style={{
-                            width: "300px",
-                            maxWidth: "100%",
-                            maxHeight: "40vh",
-                            minHeight: "200px",
-                        }}
-                    />
-                    <Typography
-                        variant="body1"
-                        component="div"
-                        align="justify"
-                        style={{ textAlignLast: "center" }}
-                    >
-                        No more coding need with Cotoch, a better way to create
-                        standard contracts and deploy on blockchain.
-                        <br />
-                        ERC20, BEP20 Token Generator.
-                    </Typography>
-                </Stack>
+                <SwipeableContent />
                 <Stack direction="column" alignItems="center" spacing={1}>
                     <Link to="/app">
                         <Button
