@@ -17,7 +17,7 @@ const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
     {
         icon: <TokenIcon />,
         name: "Token",
-        path: "/app/token",
+        path: "/app/token/generator",
     },
     {
         icon: <HelpIcon />,

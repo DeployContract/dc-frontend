@@ -56,8 +56,7 @@ function GetStart() {
                                 Deploy Contract to BlockChain
                             </Typography>
                             <Typography
-                                variant="subtitle1"
-                                component="div"
+                                component="p"
                                 align="justify"
                                 style={{ textAlignLast: "center" }}
                             >
@@ -72,7 +71,7 @@ function GetStart() {
                                     Get Started
                                 </Button>
                             </Link>
-                            <Typography variant="subtitle1" component="div">
+                            <Typography component="div">
                                 <span>or </span>
                                 <a href="#Tutorials">Learn More!</a>
                             </Typography>
