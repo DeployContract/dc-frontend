@@ -6,18 +6,42 @@ import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
-import { render } from "react-dom";
 
-const steps = [
+interface Step {
+    label: string;
+    subLabel?: string;
+    component: React.ReactElement;
+    button: string;
+}
+
+const steps: Array<Step> = [
     {
-        label: "Select campaign settings",
-        subLabel: "campaign settings",
+        label: "Introduction",
+        subLabel: "ERC20 Standard",
         component: <Test />,
         button: "Continue",
     },
     {
-        label: "Create an ad group",
-        subLabel: "campaign settings",
+        label: "Profational",
+        subLabel: "ERC777 Standard",
+        component: <Test />,
+        button: "Continue",
+    },
+    {
+        label: "Profational",
+        subLabel: "ERC777 Standard",
+        component: <Test />,
+        button: "Continue",
+    },
+    {
+        label: "Profational",
+        subLabel: "ERC777 Standard",
+        component: <Test />,
+        button: "Continue",
+    },
+    {
+        label: "Profational",
+        subLabel: "ERC777 Standard",
         component: <Test />,
         button: "Continue",
     },
@@ -46,21 +70,34 @@ function Generator() {
 
     return (
         <Box>
-            <Typography variant="h3" component="h2" sx={{ my: 3 }}>
+            <Typography variant="h4" component="h2" sx={{ my: 3 }}>
                 Token Generator
             </Typography>
             <Stepper activeStep={activeStep} orientation="vertical">
                 {steps.map((step, index) => (
                     <Step key={step.label}>
-                        <StepLabel
-                            optional={
-                                <Typography variant="caption">
-                                    {step.subLabel}
-                                </Typography>
-                            }
-                        >
-                            {step.label}
-                        </StepLabel>
+                        <Stack direction="row" alignItems="center" spacing={2}>
+                            <StepLabel
+                                optional={
+                                    <Typography variant="caption">
+                                        {step.subLabel}
+                                    </Typography>
+                                }
+                            >
+                                {step.label}
+                            </StepLabel>
+                            {activeStep > index ? (
+                                <Button
+                                    size="small"
+                                    onClick={() => {
+                                        setActiveStep(index);
+                                    }}
+                                    sx={{ height: 34 }}
+                                >
+                                    Edit
+                                </Button>
+                            ) : null}
+                        </Stack>
                         <StepContent>
                             {step.component}
                             <Box sx={{ mb: 2 }}>
@@ -102,7 +139,11 @@ function Generator() {
 function Test() {
     return (
         <Stack spacing={3} sx={{ py: 3 }}>
-            <Typography>Step1: Lets Go</Typography>
+            <Typography>
+                The ERC-20 introduces a standard for Fungible Tokens, in other
+                words, they have a property that makes each Token be exactly the
+                same (in type and value) of another Token.
+            </Typography>
             <TextField
                 required
                 id="filled-required"

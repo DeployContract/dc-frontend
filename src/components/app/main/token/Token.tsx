@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { Stack, Container } from "@mui/material";
 import Button from "@mui/material/Button";
-import Generator from "./Generator";
+import Generator from "./generator/Generator";
 import Manager from "./Manager";
 
 function Token() {
