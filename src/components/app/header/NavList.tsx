@@ -1,14 +1,11 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { NavigationItem } from "library";
-import { Icon } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import TokenIcon from "@mui/icons-material/Token";
-import DocumentScannerIcon from "@mui/icons-material/DocumentScanner";
-import AppsIcon from "@mui/icons-material/Apps";
 import HelpIcon from "@mui/icons-material/Help";
 import InfoIcon from "@mui/icons-material/Info";
 
-const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
+const navList: Array<NavigationItem<React.ReactElement>> = [
     {
         icon: <DashboardIcon />,
         name: "Dashboard",

@@ -25,7 +25,7 @@ import {
 import { NavigationItem } from "library";
 import Connect from "../../common/connect/Connect";
 
-const navList: Array<NavigationItem<ReactElement<typeof Icon>>> = [
+const navList: Array<NavigationItem<React.ReactElement>> = [
     {
         icon: <DashboardIcon />,
         name: "Get start",
