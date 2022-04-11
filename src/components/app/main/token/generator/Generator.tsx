@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Typography, Box, TextField, Stack } from "@mui/material";
+import { Typography, Box, TextField, Stack, Grid } from "@mui/material";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -79,9 +79,11 @@ function Generator() {
                         <Stack direction="row" alignItems="center" spacing={2}>
                             <StepLabel
                                 optional={
-                                    <Typography variant="caption">
-                                        {step.subLabel}
-                                    </Typography>
+                                    step.subLabel ? (
+                                        <Typography variant="caption">
+                                            {step.subLabel}
+                                        </Typography>
+                                    ) : null
                                 }
                             >
                                 {step.label}
@@ -144,13 +146,21 @@ function Test() {
                 words, they have a property that makes each Token be exactly the
                 same (in type and value) of another Token.
             </Typography>
-            <TextField
-                required
-                id="filled-required"
-                label="Token Name"
-                defaultValue="Test Token"
-                variant="outlined"
-            />
+            <Grid container>
+                <Grid item sm={12} md={8}>
+                    <TextField
+                        required
+                        id="filled-required"
+                        label="Token Name"
+                        defaultValue="Test Token"
+                        variant="outlined"
+                        fullWidth
+                    />
+                </Grid>
+                <Grid item sm={12} md={4}>
+                    Lorem episom fwun fiweun diwend iwejn djiwenjnj nfwjen nfew
+                </Grid>
+            </Grid>
             <TextField
                 required
                 id="filled-required"
