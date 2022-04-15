@@ -79,7 +79,7 @@ function Generator() {
             <Typography variant="h4" component="h2" sx={{ my: 3 }}>
                 Token Generator
             </Typography>
-            <Grid container spacing={4}>
+            <Grid container spacing={3}>
                 <Grid item sm={12} md={8}>
                     <Stepper activeStep={activeStep} orientation="vertical">
                         {steps.map((step, index) => (

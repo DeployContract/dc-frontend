@@ -8,7 +8,11 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 function Deployer() {
     return (
-        <Stack spacing={2} style={{ position: "sticky", top: 100 }}>
+        <Stack
+            spacing={2}
+            sx={{ borderLeft: 1, borderColor: "divider", p: 2 }}
+            style={{ position: "sticky", top: 100 }}
+        >
             <Typography>Deploy your contract Now:</Typography>
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Network</InputLabel>
@@ -24,6 +28,7 @@ function Deployer() {
                     <MenuItem value={30}>Polygon</MenuItem>
                 </Select>
             </FormControl>
+            <Typography>Fee: 0.001 ETH + Gas fee</Typography>
             <Button
                 variant="contained"
                 // onClick=

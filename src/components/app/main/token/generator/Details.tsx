@@ -18,7 +18,9 @@ function Details() {
                     variant="outlined"
                     fullWidth
                 />
-                <Typography>Choose a name for your token.</Typography>
+                <Typography variant="caption">
+                    Choose a name for your token.
+                </Typography>
             </Box>
             <Box>
                 <TextField
@@ -29,7 +31,7 @@ function Details() {
                     variant="outlined"
                     fullWidth
                 />
-                <Typography>
+                <Typography variant="caption">
                     Choose a symbol for your token (usually 3-5 chars).
                 </Typography>
             </Box>
@@ -42,7 +44,7 @@ function Details() {
                     variant="outlined"
                     fullWidth
                 />
-                <Typography>
+                <Typography variant="caption">
                     Insert the decimal precision of your token. If you don't
                     know what to insert, use 18.
                 </Typography>
@@ -56,7 +58,7 @@ function Details() {
                     variant="outlined"
                     fullWidth
                 />
-                <Typography variant="caption" component="span">
+                <Typography variant="caption">
                     Insert the maximum number of tokens available. By default
                     all tokens Will be put in your account.
                 </Typography>
