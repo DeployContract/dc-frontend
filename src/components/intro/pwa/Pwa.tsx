@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Typography, Button, Container, Stack } from "@mui/material";
+import { Typography, Button, Container, Stack } from "@mui/material";
+import SwipeableContent from "./SwipeableContent";
 import logo from "../../../assets/svg/logo.svg";
 import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
 
+const pwaIntroPassed = () => {
+    localStorage.setItem("pwaIntroPassed", "true");
+};
+
 function Pwa() {
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="xs">
             <Stack
                 direction="column"
                 justifyContent="space-between"
@@ -25,24 +30,14 @@ function Pwa() {
                         Cotoch
                     </Typography>
                 </Stack>
-                <Stack direction="column" alignItems="center" spacing={1}>
-                    <img
-                        src={CustomDevelopment}
-                        alt=""
-                        style={{
-                            width: "300px",
-                            maxWidth: "100%",
-                            maxHeight: "40vh",
-                            minHeight: "200px",
-                        }}
-                    />
-                    <Typography variant="subtitle1" component="div">
-                        ERC20, BEP20 Token Generator.
-                    </Typography>
-                </Stack>
+                <SwipeableContent />
                 <Stack direction="column" alignItems="center" spacing={1}>
                     <Link to="/app">
-                        <Button variant="contained" size="large">
+                        <Button
+                            variant="contained"
+                            size="large"
+                            onClick={pwaIntroPassed}
+                        >
                             Get Started
                         </Button>
                     </Link>

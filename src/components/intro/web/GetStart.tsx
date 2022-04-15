@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material";
 import logo from "../../../assets/svg/logo.svg";
-import "./GetStart.css";
 
 function GetStart() {
     return (
@@ -57,8 +56,7 @@ function GetStart() {
                                 Deploy Contract to BlockChain
                             </Typography>
                             <Typography
-                                variant="subtitle1"
-                                component="div"
+                                component="p"
                                 align="justify"
                                 style={{ textAlignLast: "center" }}
                             >
@@ -73,7 +71,7 @@ function GetStart() {
                                     Get Started
                                 </Button>
                             </Link>
-                            <Typography variant="subtitle1" component="div">
+                            <Typography component="div">
                                 <span>or </span>
                                 <a href="#Tutorials">Learn More!</a>
                             </Typography>

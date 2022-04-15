@@ -3,19 +3,15 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./sections/app/App";
-import Web from "./sections/intro/web/Web";
-import Pwa from "./sections/intro/pwa/Pwa";
+import App from "./components/app/App";
+import Intro from "./components/intro/Intro";
 import "./index.css";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/">
-                    <Route index element={<Web />} />
-                    <Route path="PWA" element={<Pwa />} />
-                </Route>
+                <Route path="/*" element={<Intro />} />
                 <Route path="/app/*" element={<App />} />
             </Routes>
         </BrowserRouter>

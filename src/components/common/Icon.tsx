@@ -1,5 +1,5 @@
 import React from "react";
-import iconSvg from "../assets/svg/logo.svg";
+import iconSvg from "../../assets/svg/logo.svg";
 
 interface IconProps {
     /**
