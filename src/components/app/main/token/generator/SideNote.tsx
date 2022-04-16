@@ -6,9 +6,13 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-function Deployer() {
+function SideNote() {
     return (
-        <Stack spacing={2} sx={{ py: 3 }}>
+        <Stack
+            spacing={2}
+            sx={{ borderLeft: 1, borderColor: "divider", p: 2 }}
+            style={{ position: "sticky", top: 100 }}
+        >
             <Typography>Deploy your contract Now:</Typography>
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Network</InputLabel>
@@ -36,4 +40,4 @@ function Deployer() {
     );
 }
 
-export default Deployer;
+export default SideNote;

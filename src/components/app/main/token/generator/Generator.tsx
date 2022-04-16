@@ -12,6 +12,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Details from "./Details";
 import Deployer from "./Deployer";
+import SideNote from "./SideNote";
 
 interface GeneratorStep {
     label: string;
@@ -25,37 +26,19 @@ const steps: Array<GeneratorStep> = [
         label: "Token Details",
         subLabel: "ERC20 Standard",
         component: <Details />,
-        button: "Next Step",
+        button: "Continue",
     },
     {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
+        label: "Preview Code",
+        subLabel: "Edit Code or Change Compiler",
         component: <Test />,
         button: "Continue",
     },
     {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Create an ad",
-        subLabel: "settings",
-        component: <Test />,
-        button: "Go to Token Manager",
+        label: "Deploy on BlockChain",
+        subLabel: "Select Network & Deploy",
+        component: <Deployer />,
+        button: "Deploy on BlockChain",
     },
 ];
 
@@ -148,7 +131,7 @@ function Generator() {
                     )}
                 </Grid>
                 <Grid item sm={12} md={4}>
-                    <Deployer />
+                    <SideNote />
                 </Grid>
             </Grid>
         </Box>
