@@ -6,50 +6,39 @@ import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Details from "./Details";
+import Deployer from "./Deployer";
+import SideNote from "./SideNote";
 
-interface Step {
+interface GeneratorStep {
     label: string;
     subLabel?: string;
     component: React.ReactElement;
     button: string;
 }
 
-const steps: Array<Step> = [
+const steps: Array<GeneratorStep> = [
     {
-        label: "Introduction",
+        label: "Token Details",
         subLabel: "ERC20 Standard",
+        component: <Details />,
+        button: "Continue",
+    },
+    {
+        label: "Preview Code",
+        subLabel: "Edit Code or Change Compiler",
         component: <Test />,
         button: "Continue",
     },
     {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Profational",
-        subLabel: "ERC777 Standard",
-        component: <Test />,
-        button: "Continue",
-    },
-    {
-        label: "Create an ad",
-        subLabel: "settings",
-        component: <Test />,
-        button: "Go to Token Manager",
+        label: "Deploy on BlockChain",
+        subLabel: "Select Network & Deploy",
+        component: <Deployer />,
+        button: "Deploy on BlockChain",
     },
 ];
 
@@ -73,67 +62,78 @@ function Generator() {
             <Typography variant="h4" component="h2" sx={{ my: 3 }}>
                 Token Generator
             </Typography>
-            <Stepper activeStep={activeStep} orientation="vertical">
-                {steps.map((step, index) => (
-                    <Step key={step.label}>
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                            <StepLabel
-                                optional={
-                                    step.subLabel ? (
-                                        <Typography variant="caption">
-                                            {step.subLabel}
-                                        </Typography>
-                                    ) : null
-                                }
-                            >
-                                {step.label}
-                            </StepLabel>
-                            {activeStep > index ? (
-                                <Button
-                                    size="small"
-                                    onClick={() => {
-                                        setActiveStep(index);
-                                    }}
-                                    sx={{ height: 34 }}
+            <Grid container spacing={3}>
+                <Grid item sm={12} md={8}>
+                    <Stepper activeStep={activeStep} orientation="vertical">
+                        {steps.map((step, index) => (
+                            <Step key={step.label}>
+                                <Stack
+                                    direction="row"
+                                    alignItems="center"
+                                    spacing={2}
                                 >
-                                    Edit
-                                </Button>
-                            ) : null}
-                        </Stack>
-                        <StepContent>
-                            {step.component}
-                            <Box sx={{ mb: 2 }}>
-                                <div>
-                                    <Button
-                                        variant="contained"
-                                        onClick={handleNext}
-                                        sx={{ mt: 1, mr: 1 }}
+                                    <StepLabel
+                                        optional={
+                                            step.subLabel ? (
+                                                <Typography variant="caption">
+                                                    {step.subLabel}
+                                                </Typography>
+                                            ) : null
+                                        }
                                     >
-                                        {step.button}
-                                    </Button>
-                                    <Button
-                                        disabled={index === 0}
-                                        onClick={handleBack}
-                                        sx={{ mt: 1, mr: 1 }}
-                                    >
-                                        Back
-                                    </Button>
-                                </div>
-                            </Box>
-                        </StepContent>
-                    </Step>
-                ))}
-            </Stepper>
-            {activeStep === steps.length && (
-                <Paper square elevation={0} sx={{ p: 3 }}>
-                    <Typography>
-                        All steps completed - you&apos;re finished
-                    </Typography>
-                    <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                        Reset
-                    </Button>
-                </Paper>
-            )}
+                                        {step.label}
+                                    </StepLabel>
+                                    {activeStep > index ? (
+                                        <Button
+                                            size="small"
+                                            onClick={() => {
+                                                setActiveStep(index);
+                                            }}
+                                            sx={{ height: 34 }}
+                                        >
+                                            Edit
+                                        </Button>
+                                    ) : null}
+                                </Stack>
+                                <StepContent>
+                                    {step.component}
+                                    <Box sx={{ mb: 2 }}>
+                                        <div>
+                                            <Button
+                                                variant="outlined"
+                                                onClick={handleNext}
+                                                sx={{ mt: 1, mr: 1 }}
+                                            >
+                                                {step.button}
+                                            </Button>
+                                            <Button
+                                                disabled={index === 0}
+                                                onClick={handleBack}
+                                                sx={{ mt: 1, mr: 1 }}
+                                            >
+                                                Back
+                                            </Button>
+                                        </div>
+                                    </Box>
+                                </StepContent>
+                            </Step>
+                        ))}
+                    </Stepper>
+                    {activeStep === steps.length && (
+                        <Paper square elevation={0} sx={{ p: 3 }}>
+                            <Typography>
+                                All steps completed - you&apos;re finished
+                            </Typography>
+                            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                                Reset
+                            </Button>
+                        </Paper>
+                    )}
+                </Grid>
+                <Grid item sm={12} md={4}>
+                    <SideNote />
+                </Grid>
+            </Grid>
         </Box>
     );
 }

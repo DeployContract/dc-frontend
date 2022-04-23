@@ -8,7 +8,6 @@ import {
     ListItemText,
     Icon,
     ListItemIcon,
-    Hidden,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { navList } from "./NavList";
@@ -69,43 +68,38 @@ function Navigation(props: NavProps) {
     return (
         <Box>
             {/* For Mobile view */}
-            <Hidden mdUp>
-                <SwipeableDrawer
-                    open={props.mobileOpen}
-                    variant="temporary"
-                    sx={{
-                        display: { xs: "block", sm: "none" },
-                        "& .MuiDrawer-paper": {
-                            boxSizing: "border-box",
-                            width: props.navWidth,
-                        },
-                    }}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    onClose={props.onClose}
-                    onOpen={props.onOpen}
-                >
-                    {NavItems(props.onClose)}
-                </SwipeableDrawer>
-            </Hidden>
-
-            <Hidden smDown>
-                <Drawer
-                    open={props.open}
-                    variant="persistent"
-                    sx={{
-                        display: { xs: "none", sm: "block" },
-                        "& .MuiDrawer-paper": {
-                            boxSizing: "border-box",
-                            width: props.navWidth,
-                        },
-                    }}
-                    onClose={props.onClose}
-                >
-                    {NavItems()}
-                </Drawer>
-            </Hidden>
+            <SwipeableDrawer
+                open={props.mobileOpen}
+                variant="temporary"
+                sx={{
+                    display: { xs: "block", sm: "none" },
+                    "& .MuiDrawer-paper": {
+                        boxSizing: "border-box",
+                        width: props.navWidth,
+                    },
+                }}
+                ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                }}
+                onClose={props.onClose}
+                onOpen={props.onOpen}
+            >
+                {NavItems(props.onClose)}
+            </SwipeableDrawer>
+            <Drawer
+                open={props.open}
+                variant="persistent"
+                sx={{
+                    display: { xs: "none", sm: "block" },
+                    "& .MuiDrawer-paper": {
+                        boxSizing: "border-box",
+                        width: props.navWidth,
+                    },
+                }}
+                onClose={props.onClose}
+            >
+                {NavItems()}
+            </Drawer>
         </Box>
     );
 }
