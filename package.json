@@ -19,6 +19,7 @@
         "@types/react-dom": "^16.9.14",
         "@types/react-swipeable-views": "^0.13.1",
         "@types/react-swipeable-views-utils": "^0.13.3",
+        "hector": "https://github.com/ContractSupplyChain/Hector",
         "library": "file:./src/library",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
