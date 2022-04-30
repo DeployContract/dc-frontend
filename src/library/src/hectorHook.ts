@@ -24,7 +24,7 @@ interface ConnectionStatus {
     error: any;
 
     /**
-     * Wallet witch user selected
+     * Wallet
      */
     wallet: string | null;
 }
