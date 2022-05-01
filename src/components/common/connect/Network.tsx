@@ -4,7 +4,7 @@ import React from "react";
 function Network() {
     return (
         <div>
-            <Chip label="Main" variant="filled" />
+            <Chip label="Main" variant="filled" size="small" />
         </div>
     );
 }
