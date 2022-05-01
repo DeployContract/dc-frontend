@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Button, Grid } from "@mui/material";
 import useConnect, { wallets } from "../../../library/src/hectorHook";
+import Network from "./Network";
 
 /**
  * @param str Target string
@@ -36,7 +37,14 @@ function Connect() {
     return (
         <div>
             {status.wallet ? (
-                hideWallet(status.wallet, 6)
+                <Button sx={{ color: "white" }}>
+                    <Grid container direction="column">
+                        <Grid item>{hideWallet(status.wallet, 7)}</Grid>
+                        <Grid item>
+                            <Network />
+                        </Grid>
+                    </Grid>
+                </Button>
             ) : (
                 <Button sx={{ color: "white" }} onClick={connect}>
                     Connect
