@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
 import { Button, Grid } from "@mui/material";
-import useConnect, { wallets } from "../../../library/src/hectorHook";
 import Network from "./Network";
 
 /**

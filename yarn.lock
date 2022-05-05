@@ -1740,6 +1740,26 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
+"@qhecuba/hector-metamask@0.0.5-alpha.0":
+  version "0.0.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@qhecuba/hector-metamask/-/hector-metamask-0.0.5-alpha.0.tgz#988050f6374d9a44ec4288d28b011d0066229988"
+  integrity sha512-g5HKxrKc4t48eq86xRBrWngcY0oMtOTJQlDWOvf8LeErzufSQqP1BLrtSPt4Qfwaz6+nB8TgakWrby4XXnQa/w==
+  dependencies:
+    hector "^0.0.2"
+
+"@qhecuba/hector-react-hooks@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@qhecuba/hector-react-hooks/-/hector-react-hooks-0.0.9.tgz#fcbc2d0fd073ac62a427b0499b4105839648c5ee"
+  integrity sha512-t5i1G286YLKO7O/ctz9AfQO3NO1DxLH2dGTY4VTGzhJnBDZ8PfOQO76Z1WyCaydrhYgVgAtseVd+21QgY4Z7Eg==
+  dependencies:
+    "@qhecuba/hector" "0.0.5-alpha.0"
+    "@qhecuba/hector-metamask" "0.0.5-alpha.0"
+
+"@qhecuba/hector@0.0.5-alpha.0":
+  version "0.0.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@qhecuba/hector/-/hector-0.0.5-alpha.0.tgz#25fa28582d6edfe405426a2c909170470d58b39b"
+  integrity sha512-KFZnrcpWY7gh8MIMAqgsuG4QIqXmhtRpp8RL+qDiWU24TAFCLYnpKRqyvzmGDp+ymBaYNOyRGe8fZfmc2wqPQw==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -5050,9 +5070,10 @@ he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-"hector@https://github.com/ContractSupplyChain/Hector":
-  version "0.0.1"
-  resolved "https://github.com/ContractSupplyChain/Hector#5457679bcfb27a5571de7cab43e1301a30e24574"
+hector@^0.0.2:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hector/-/hector-0.1.0.tgz#8ccc5241fad78f8fccfce07e681b577307805bbb"
+  integrity sha1-jMxSQfrXj4/M/OB+aBtXcweAW7s=
 
 history@^5.2.0:
   version "5.3.0"
