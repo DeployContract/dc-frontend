@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { Button } from "@mui/material";
-import useConnect, { wallets } from "../../../library/src/hectorHook";
+import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
 
 function Connect() {
     const [status, connect, getWallet] = useConnect(wallets.metamask());
-
-    useEffect(() => console.log(status));
 
     return (
         <div>
