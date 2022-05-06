@@ -10,7 +10,7 @@
         "@mui/material": "5.6.2",
         "@mui/styled-engine-sc": "5.5.2",
         "@mui/x-data-grid": "5.7.0",
-        "@qhecuba/hector-react-hooks": "0.0.9",
+        "@qhecuba/hector-react-hooks": "0.0.10",
         "@testing-library/jest-dom": "5.16.2",
         "@testing-library/react": "11.2.7",
         "@testing-library/user-event": "12.8.3",
