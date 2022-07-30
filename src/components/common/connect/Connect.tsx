@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Menu, MenuItem } from "@mui/material";
 import Network from "./Network";
 
 /**
@@ -22,6 +22,7 @@ const cutString = (str: string, rep: number): Array<string> => {
 
 function Connect() {
     const [status, connect, getWallet] = useConnect(wallets.metamask());
+    const [anchor, setAnchor] = React.useState<HTMLButtonElement | null>(null);
 
     useEffect(() => {
         connect();
@@ -34,10 +35,14 @@ function Connect() {
         return [str[0], "...", str[str.length - 1]].join("");
     };
 
+    const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+        anchor ? setAnchor(null) : setAnchor(event.currentTarget);
+    };
+
     return (
         <div>
             {status.wallet ? (
-                <Button sx={{ color: "white" }}>
+                <Button sx={{ color: "white" }} onClick={toggleMenu}>
                     <Grid container direction="column">
                         <Grid item>{hideWallet(status.wallet, 7)}</Grid>
                         <Grid item>
@@ -50,6 +55,10 @@ function Connect() {
                     Connect
                 </Button>
             )}
+
+            <Menu anchorEl={anchor} onClose={toggleMenu} open={Boolean(anchor)}>
+                <MenuItem>HelloWordl</MenuItem>
+            </Menu>
         </div>
     );
 }

@@ -66,7 +66,7 @@ interface NavProps {
 
 function Navigation(props: NavProps) {
     return (
-        <Box>
+        <Box sx={{ color: "text.primary" }}>
             {/* For Mobile view */}
             <SwipeableDrawer
                 open={props.mobileOpen}

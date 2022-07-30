@@ -98,22 +98,22 @@ function Generator() {
                                 <StepContent>
                                     {step.component}
                                     <Box sx={{ mb: 2 }}>
-                                        <div>
-                                            <Button
-                                                variant="outlined"
-                                                onClick={handleNext}
-                                                sx={{ mt: 1, mr: 1 }}
-                                            >
-                                                {step.button}
-                                            </Button>
-                                            <Button
-                                                disabled={index === 0}
-                                                onClick={handleBack}
-                                                sx={{ mt: 1, mr: 1 }}
-                                            >
-                                                Back
-                                            </Button>
-                                        </div>
+                                        {/* <div> :| */}
+                                        <Button
+                                            variant="outlined"
+                                            onClick={handleNext}
+                                            sx={{ mt: 1, mr: 1 }}
+                                        >
+                                            {step.button}
+                                        </Button>
+                                        <Button
+                                            disabled={index === 0}
+                                            onClick={handleBack}
+                                            sx={{ mt: 1, mr: 1 }}
+                                        >
+                                            Back
+                                        </Button>
+                                        {/* </div> */}
                                     </Box>
                                 </StepContent>
                             </Step>
