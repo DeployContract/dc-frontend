@@ -15,6 +15,7 @@ import {
     TextField,
     useTheme,
     useMediaQuery,
+    Chip,
 } from "@mui/material";
 
 interface Project {
@@ -64,10 +65,14 @@ function Dashboard() {
                     <Grid item>
                         <Card variant="outlined">
                             <CardContent>
-                                <Typography variant="h5">{x.name}</Typography>
-                                <Typography variant="h6">
-                                    {x.description}
-                                </Typography>
+                                <Stack direction="row" spacing={2}>
+                                    <Typography variant="h5">
+                                        {x.name}
+                                    </Typography>
+
+                                    <Chip label="Not Deployed" color="info" />
+                                </Stack>
+                                <Typography>{x.description}</Typography>
                             </CardContent>
                             <CardActions>
                                 <Button>Manage</Button>
@@ -113,6 +118,9 @@ function Dashboard() {
                 </DialogContent>
 
                 <DialogActions>
+                    <Button onClick={toggleDialog} color="error">
+                        Cancel
+                    </Button>
                     <Button
                         onClick={() => {
                             updateProjects({
