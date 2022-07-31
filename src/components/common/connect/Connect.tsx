@@ -1,7 +1,17 @@
 import React, { useEffect } from "react";
 import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
-import { Button, Grid, Menu, MenuItem } from "@mui/material";
+import {
+    Button,
+    Grid,
+    Menu,
+    MenuItem,
+    ListItemIcon,
+    Theme,
+} from "@mui/material";
 import Network from "./Network";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import ThemeContext from "../../../theme";
+import { createTheme } from "@mui/material";
 
 /**
  * @param str Target string
@@ -23,6 +33,9 @@ const cutString = (str: string, rep: number): Array<string> => {
 function Connect() {
     const [status, connect, getWallet] = useConnect(wallets.metamask());
     const [anchor, setAnchor] = React.useState<HTMLButtonElement | null>(null);
+    const [theme, setTheme] = React.useState<Theme>(
+        React.useContext(ThemeContext)
+    );
 
     useEffect(() => {
         connect();
@@ -39,26 +52,40 @@ function Connect() {
         anchor ? setAnchor(null) : setAnchor(event.currentTarget);
     };
 
+    const changeTheme = () =>
+        setTheme(createTheme({ palette: { mode: "light" } }));
+
     return (
         <div>
-            {status.wallet ? (
-                <Button sx={{ color: "white" }} onClick={toggleMenu}>
-                    <Grid container direction="column">
-                        <Grid item>{hideWallet(status.wallet, 7)}</Grid>
-                        <Grid item>
-                            <Network />
+            <ThemeContext.Provider value={theme}>
+                {status.wallet ? (
+                    <Button sx={{ color: "white" }} onClick={toggleMenu}>
+                        <Grid container direction="column">
+                            <Grid item>{hideWallet(status.wallet, 7)}</Grid>
+                            <Grid item>
+                                <Network />
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </Button>
-            ) : (
-                <Button sx={{ color: "white" }} onClick={connect}>
-                    Connect
-                </Button>
-            )}
+                    </Button>
+                ) : (
+                    <Button sx={{ color: "white" }} onClick={connect}>
+                        Connect
+                    </Button>
+                )}
 
-            <Menu anchorEl={anchor} onClose={toggleMenu} open={Boolean(anchor)}>
-                <MenuItem>HelloWordl</MenuItem>
-            </Menu>
+                <Menu
+                    anchorEl={anchor}
+                    onClose={toggleMenu}
+                    open={Boolean(anchor)}
+                >
+                    <MenuItem onClick={changeTheme}>
+                        <ListItemIcon>
+                            <DarkModeOutlinedIcon />
+                        </ListItemIcon>
+                        ChangeTheme
+                    </MenuItem>
+                </Menu>
+            </ThemeContext.Provider>
         </div>
     );
 }
