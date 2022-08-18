@@ -89,7 +89,7 @@ function Header() {
 
 const SiteName = () => (
     <Typography variant="h5" noWrap component="h1" sx={{ mr: 2 }}>
-        Cotoch
+        DeContract
     </Typography>
 );
 
