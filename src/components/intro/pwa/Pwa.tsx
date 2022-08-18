@@ -27,7 +27,7 @@ function Pwa() {
                 >
                     <img src={logo} alt="logo" style={{ width: "60px" }} />
                     <Typography variant="h4" component="h1">
-                        Cotoch
+                        DeContract
                     </Typography>
                 </Stack>
                 <SwipeableContent />

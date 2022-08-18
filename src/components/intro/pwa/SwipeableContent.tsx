@@ -19,25 +19,25 @@ const images = [
         label: "Hello1",
         icon: CustomDevelopment,
         content:
-            "No more coding need with Cotoch, a better way to create standard contracts and deploy on blockchain.",
+            "No more coding need with DeContract, a better way to create standard contracts and deploy on blockchain.",
     },
     {
         label: "Hello2",
         icon: CustomDevelopment,
         content:
-            "No more coding need with Cotoch, a better way to create standard contracts and deploy on blockchain.",
+            "No more coding need with DeContract, a better way to create standard contracts and deploy on blockchain.",
     },
     {
         label: "Hello3",
         icon: CustomDevelopment,
         content:
-            "No more coding need with Cotoch, a better way to create standard contracts and deploy on blockchain.",
+            "No more coding need with DeContract, a better way to create standard contracts and deploy on blockchain.",
     },
     {
         label: "Hello4",
         icon: CustomDevelopment,
         content:
-            "No more coding need with Cotoch, a better way to create standard contracts and deploy on blockchain.",
+            "No more coding need with DeContract, a better way to create standard contracts and deploy on blockchain.",
     },
 ];
 
