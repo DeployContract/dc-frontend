@@ -60,7 +60,7 @@ function GetStart() {
                                 align="justify"
                                 style={{ textAlignLast: "center" }}
                             >
-                                No more coding need with Cotoch, a better way to
+                                No more coding need with DeContract, a better way to
                                 create standard contracts and deploy on
                                 blockchain.
                                 <br />

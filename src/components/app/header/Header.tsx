@@ -40,7 +40,7 @@ function Header(props: HeaderProps) {
                         component="h1"
                         sx={{ flexGrow: 1 }}
                     >
-                        Cotoch
+                        DeContract
                     </Typography>
                     <Connect />
                 </Toolbar>

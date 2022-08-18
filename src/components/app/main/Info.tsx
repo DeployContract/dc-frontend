@@ -48,7 +48,7 @@ function Info() {
             <Icon style={{ width: "10rem" }} />
             <Card variant="outlined">
                 <CardContent>
-                    <Typography variant="h3">Cotoch</Typography>
+                    <Typography variant="h3">DeContract</Typography>
                     <Typography variant="h5">Version: 0.0.1</Typography>
                 </CardContent>
                 <CardActions>
