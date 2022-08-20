@@ -17,7 +17,7 @@ const tutorList: Array<TutorListItem> = [
         icon: CryptoPortfolio,
         title: "ERC20 Tokens",
         description:
-            "The Ethereum token standard (ERC20) defines a common list of rules that an Ethereum token has to implement. Giving developers the ability to program how new tokens will function within the Ethereum ecosystem. This token protocol became popular with crowdfunding companies via initial coin offering (ICO).",
+            "If a number, it sets the number of columns the grid item uses. It cant be greater than the total number of columns of the container (12 by default). If auto, the grid items width matches its content. If false, the prop is ignored. If true, the grid items width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.",
     },
     {
         icon: Proggramer,
