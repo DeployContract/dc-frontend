@@ -13,7 +13,6 @@ interface FaqListItem{
 }
 
 const FaqList: Array<FaqListItem> = [
-
     {
         title: "What is Ethereum?",
         discreption: "There are lots of tokens lost forever into Smart Contracts. Each Ethereum contract is a potential token trap for ERC20 tokens. They can't be recovered so it means money losses for end users. TokenRecover allows the contract owner to recover any ERC20 token sent into the contract for error."
@@ -55,7 +54,7 @@ function Faq() {
                     <Typography> {Item.title} </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography textAlign= "justify">
+                    <Typography sx={{textAlign: "justify", wordSpacing: "-0.05em", fontSize: "90%", hyphens: "auto", }}>
                         {Item.discreption}
                     </Typography>
                 </AccordionDetails>
