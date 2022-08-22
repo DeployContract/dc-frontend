@@ -50,7 +50,7 @@ function GetStart() {
                                 variant="h5"
                                 component="h1"
                                 sx={{
-                                    display: { xs: "flex", lg: "none" },
+                                    display: { xs: "flex", lg: "none", textAlign: "center" },
                                 }}
                             >
                                 Deploy Contract to BlockChain
