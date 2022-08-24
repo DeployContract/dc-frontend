@@ -33,10 +33,10 @@ function RoadMap() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" fontSize= "1.1rem"    >
                         Proposal
                     </Typography>
-                    <Typography>Contracts for everyone</Typography>
+                    <Typography fontSize= "0.9rem">Contracts for everyone</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -56,10 +56,10 @@ function RoadMap() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" fontSize= "1.1rem">
                         Research
                     </Typography>
-                    <Typography>ّFirst researchs</Typography>
+                    <Typography fontSize= "0.9rem">First researchs</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -78,10 +78,10 @@ function RoadMap() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" fontSize= "1.1rem">
                         Development
                     </Typography>
-                    <Typography>We started development!</Typography>
+                    <Typography fontSize= "0.9rem">We started development!</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -93,10 +93,10 @@ function RoadMap() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" fontSize= "1.1rem">
                         ERC20 Tokens
                     </Typography>
-                    <Typography>Support of ERC20 standard</Typography>
+                    <Typography fontSize= "0.9rem">Support of ERC20 standard</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -108,10 +108,10 @@ function RoadMap() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <Typography variant="h6" component="span" fontSize= "1.1rem" >
                         More!
                     </Typography>
-                    <Typography>Then we bringing you more</Typography>
+                    <Typography fontSize= "0.9rem">Then we bringing you more</Typography>
                 </TimelineContent>
             </TimelineItem>
         </Timeline>
