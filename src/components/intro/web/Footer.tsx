@@ -31,16 +31,6 @@ function Footer() {
                         </ListItem>
                         <ListItem>
                             <Link href="https://storyset.com" color="inherit">
-                                Illustrations by
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
                                 Illustrations by Storyset
                             </Link>
                         </ListItem>
@@ -65,14 +55,25 @@ function Footer() {
                                 Illustrations by Storyset
                             </Link>
                         </ListItem>
+                    </List>
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <Typography
+                        sx={{ mt: 4, mb: 2 }}
+                        variant="h6"
+                        component="div"
+                    >
+                        Links
+                    </Typography>
+                    <List dense={true}>
                         <ListItem>
                             <Link href="https://storyset.com" color="inherit">
                                 Illustrations by Storyset
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
+                            <Link href="https://github.com/DeployContract" color="inherit">
+                                GitHub
                             </Link>
                         </ListItem>
                     </List>
@@ -83,58 +84,17 @@ function Footer() {
                         variant="h6"
                         component="div"
                     >
-                        Partners
+                        WebSites
                     </Typography>
                     <List dense={true}>
                         <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
+                            <Link href="https://decontract.net" color="inherit">
+                                DeContract.net
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                    </List>
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <Typography
-                        sx={{ mt: 4, mb: 2 }}
-                        variant="h6"
-                        component="div"
-                    >
-                        Partners
-                    </Typography>
-                    <List dense={true}>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://storyset.com" color="inherit">
-                                Illustrations by Storyset
+                            <Link href="https://decontract.eth.link" color="inherit">
+                                DeContract.eth.link
                             </Link>
                         </ListItem>
                     </List>
