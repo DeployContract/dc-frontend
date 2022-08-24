@@ -18,12 +18,12 @@ const FaqList: Array<FaqListItem> = [
         discreption: "There are lots of tokens lost forever into Smart Contracts. Each Ethereum contract is a potential token trap for ERC20 tokens. They can't be recovered so it means money losses for end users. TokenRecover allows the contract owner to recover any ERC20 token sent into the contract for error."
     },
     {
-        title: "What is an ERC20 token?",
+        title: "What is an ERC20 Token?",
         discreption: "ERC-20 tokens are blockchain-based assets. ERC-20 Tokens are Smart Contracts running on the Ethereum blockchain. They can be sent and received like any other crypto. ERC-20 Standard provides specifications on how these assets must be sent, received and stored."
     },
     {
-        title: "What is ERC1363 Payable Token?",
-        discreption: "There is no way to execute any code on a receiver or spender contract after a ERC20 transfer, transferFrom or approve so, to make an action, it is required to send another transaction.This introduces complexity on UI development and friction on adoption because users must wait for the first transaction to be executed and then send the second one. They must also pay GAS twice.ERC1363 aims to make tokens capable of performing actions more easily and working without the use of any other listener. It allows to make a callback on a receiver or spender contract, after a transfer or an approval, in a single transaction.There are many proposed uses of Smart Contracts that can accept ERC20 callbacks. Examples could beto create a token payable crowdsaleselling services for tokenspaying invoicesmaking subscriptionsFor these reasons it was originally named Payable Token. Anyway you can use it for specific utilities or for any other purposes who require the execution of a callback after a transfer or approval received."
+        title: "What is an BEP-20 Token?",
+        discreption: "BEP-20 tokens are blockchain-based assets. BEP-20 Tokens are Smart Contracts running on the Binance Smart Chain. They can be sent and received like any other crypto. BEP-20 Standard provides specifications on how these assets must be sent, received and stored."
     },
     {
         title: "Where is my Token address?",
