@@ -17,10 +17,10 @@ import Typography from "@mui/material/Typography";
 interface RoadMapList{
     icon: React.ReactElement,
     iconColor: "inherit" | "grey" | "primary" | "secondary" | "error" | "info" | "success" | "warning" | undefined,
-    iconline: "outlined" | "filled" | undefined,
+    iconOutline: "outlined" | "filled" | undefined,
     titr: string,
     discreption: string,
-    title: string,
+    title: string | null,
 }
 
 const MapList: RoadMapList[] = [
@@ -28,7 +28,7 @@ const MapList: RoadMapList[] = [
         titr: "Proposal",
         icon:  <LightbulbIcon />,
         iconColor: "primary",
-        iconline: undefined,
+        iconOutline: undefined,
         discreption: "Contracts for everyone",
         title: "21 March 2022",
     },
@@ -36,7 +36,7 @@ const MapList: RoadMapList[] = [
         titr: "Research",
         icon: <LaptopMacIcon />,
         iconColor: "primary",
-        iconline: undefined,
+        iconOutline: undefined,
         discreption: "First researchs",
         title: "30 March 2022", 
     },
@@ -44,7 +44,7 @@ const MapList: RoadMapList[] = [
         titr: "Development",
         icon: <CodeIcon />,
         iconColor: "secondary",
-        iconline: undefined,
+        iconOutline: undefined,
         discreption: "We started development!",
         title: "Now", 
     },
@@ -52,17 +52,17 @@ const MapList: RoadMapList[] = [
         titr: "ERC20 Tokens",
         icon: <CurrencyBitcoinIcon />,
         iconColor: "primary",
-        iconline: "outlined",
+        iconOutline: "outlined",
         discreption: "Support of ERC20 standard",
-        title: "", 
+        title: null , 
     },
     {
         titr: "More!",
         icon: <MoreHorizIcon />,
         iconColor: "primary",
-        iconline: "outlined",
+        iconOutline: "outlined",
         discreption: "Then we bringing you more",
-        title: "", 
+        title: null, 
     },
 ];
 
@@ -81,7 +81,7 @@ function RoadMap() {
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector />
-                        <TimelineDot color= {item.iconColor} variant= {item.iconline}>
+                        <TimelineDot color= {item.iconColor} variant= {item.iconOutline}>
                             {item.icon}
                         </TimelineDot>
                         <TimelineConnector />
