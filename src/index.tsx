@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./components/app/App";
-import Intro from "./components/intro/Intro";
+import App from "./pages/app/App";
+import Intro from "./pages/intro/Intro";
 import "./index.css";
 
 const root = ReactDOM.createRoot(

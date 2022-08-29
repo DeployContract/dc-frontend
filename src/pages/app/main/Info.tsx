@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import Icon from "../../common/Icon";
+import Icon from "../../../components/common/Icon";
 
 function Info() {
     const [modalOpen, setModalOpen] = React.useState<boolean>(false);
