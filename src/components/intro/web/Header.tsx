@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SchoolIcon from "@mui/icons-material/School";
@@ -11,7 +11,6 @@ import {
     Box,
     Button,
     Container,
-    Icon,
     IconButton,
     List,
     ListItem,

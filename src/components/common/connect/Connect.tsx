@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
 import {
+    Box,
     Button,
     Grid,
     Menu,
@@ -56,7 +57,7 @@ function Connect() {
         setTheme(createTheme({ palette: { mode: "light" } }));
 
     return (
-        <div>
+        <Box>
             <ThemeContext.Provider value={theme}>
                 {status.wallet ? (
                     <Button sx={{ color: "white" }} onClick={toggleMenu}>
@@ -86,7 +87,7 @@ function Connect() {
                     </MenuItem>
                 </Menu>
             </ThemeContext.Provider>
-        </div>
+        </Box>
     );
 }
 
