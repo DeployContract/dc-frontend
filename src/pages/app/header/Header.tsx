@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Connect from "../../../components/common/connect/Connect";
+import Connect from "../../../components/connect/Connect";
 
 interface HeaderProps {
     /**

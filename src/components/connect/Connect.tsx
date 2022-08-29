@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Network from "./Network";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import ThemeContext from "../../../theme";
+import ThemeContext from "../../theme";
 import { createTheme } from "@mui/material";
 
 /**
