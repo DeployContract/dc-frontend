@@ -13,107 +13,87 @@ import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Typography from "@mui/material/Typography";
 
+
+interface RoadMapList{
+    icon: React.ReactElement,
+    iconColor: "inherit" | "grey" | "primary" | "secondary" | "error" | "info" | "success" | "warning" | undefined,
+    iconOutline: "outlined" | "filled" | undefined,
+    titr: string,
+    discreption: string,
+    title: string | null,
+}
+
+const MapList: RoadMapList[] = [
+    {
+        titr: "Proposal",
+        icon:  <LightbulbIcon />,
+        iconColor: "primary",
+        iconOutline: undefined,
+        discreption: "Contracts for everyone",
+        title: "21 March 2022",
+    },
+    {
+        titr: "Research",
+        icon: <LaptopMacIcon />,
+        iconColor: "primary",
+        iconOutline: undefined,
+        discreption: "First researchs",
+        title: "30 March 2022", 
+    },
+    {
+        titr: "Development",
+        icon: <CodeIcon />,
+        iconColor: "secondary",
+        iconOutline: undefined,
+        discreption: "We started development!",
+        title: "Now", 
+    },
+    {
+        titr: "ERC20 Tokens",
+        icon: <CurrencyBitcoinIcon />,
+        iconColor: "primary",
+        iconOutline: "outlined",
+        discreption: "Support of ERC20 standard",
+        title: null , 
+    },
+    {
+        titr: "More!",
+        icon: <MoreHorizIcon />,
+        iconColor: "primary",
+        iconOutline: "outlined",
+        discreption: "Then we bringing you more",
+        title: null, 
+    },
+];
+
 function RoadMap() {
     return (
         <Timeline position="alternate">
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: "auto 0" }}
-                    align="right"
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    21 March 2022
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <LightbulbIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span" fontSize= "1.1rem"    >
-                        Proposal
-                    </Typography>
-                    <Typography fontSize= "0.9rem">Contracts for everyone</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: "auto 0" }}
-                    align="right"
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    30 March 2022
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span" fontSize= "1.1rem">
-                        Research
-                    </Typography>
-                    <Typography fontSize= "0.9rem">First researchs</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: "auto 0" }}
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    Now
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="secondary">
-                        <CodeIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span" fontSize= "1.1rem">
-                        Development
-                    </Typography>
-                    <Typography fontSize= "0.9rem">We started development!</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <CurrencyBitcoinIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span" fontSize= "1.1rem">
-                        ERC20 Tokens
-                    </Typography>
-                    <Typography fontSize= "0.9rem">Support of ERC20 standard</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <MoreHorizIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: "12px", px: 2 }}>
-                    <Typography variant="h6" component="span" fontSize= "1.1rem" >
-                        More!
-                    </Typography>
-                    <Typography fontSize= "0.9rem">Then we bringing you more</Typography>
-                </TimelineContent>
-            </TimelineItem>
+            {MapList.map((item) => (
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: "auto 0" }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        {item.title}
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector />
+                        <TimelineDot color= {item.iconColor} variant= {item.iconOutline}>
+                            {item.icon}
+                        </TimelineDot>
+                        <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: "12px", px: 2 }}>
+                        <Typography variant="h6" component="span" fontSize= "1.1rem"    >
+                            {item.titr}
+                        </Typography>
+                        <Typography fontSize= "0.9rem">{item.discreption}</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+            ))}
         </Timeline>
     );
 }
