@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
@@ -7,7 +7,10 @@ import App from "./components/app/App";
 import Intro from "./components/intro/Intro";
 import "./index.css";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(
+    document.getElementById("root") as HTMLElement
+);
+root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
@@ -15,8 +18,7 @@ ReactDOM.render(
                 <Route path="/app/*" element={<App />} />
             </Routes>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
