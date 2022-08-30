@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import Header from "./Header";
 import GetStart from "./GetStart";
 import Tutorial from "./Tutorial";
@@ -15,25 +15,25 @@ function Web() {
         <Box>
             <Header />
             <GetStart />
-            <Box id="Tutorials" className="section">
+            <Box className="section">
                 <Tutorial />
             </Box>
-            <Box id="Pricing" className="section">
+            <Box className="section">
                 <Typography variant="h3" component="h2" align="center">
                     Pricing
                 </Typography>
                 <Pricing />
             </Box>
-            <Box id="CustomContract" className="section">
+            <Box className="section">
                 <CustomContract />
             </Box>
-            <Box id="FAQ" className="section">
+            <Box className="section">
                 <Typography variant="h3" component="h2" align="center">
                     FAQ
                 </Typography>
                 <Faq />
             </Box>
-            <Box id="Roadmap" className="section">
+            <Box className="section">
                 <Typography variant="h3" component="h2" align="center">
                     Road map
                 </Typography>
