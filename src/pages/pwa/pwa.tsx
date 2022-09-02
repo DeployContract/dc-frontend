@@ -5,7 +5,7 @@ import SwipeableContent from "./swipeableContent";
 import logo from "../../assets/svg/logo.svg";
 
 const pwaIntroPagePassed = () => {
-    localStorage.setItem("pwaIntropagePassed", "true");
+    localStorage.setItem("pwaIntroPagePassed", "true");
 };
 
 function Pwa() {
