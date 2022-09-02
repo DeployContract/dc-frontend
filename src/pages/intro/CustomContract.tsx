@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Container } from "@mui/material";
-import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
+import CustomDevelopment from "./../../assets/svg/custom-development.svg";
 import Grid from "@mui/material/Grid";
 
 function CustomContract() {

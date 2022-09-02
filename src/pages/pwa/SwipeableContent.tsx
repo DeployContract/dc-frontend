@@ -8,7 +8,7 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import CustomDevelopment from "./../../../assets/svg/custom-development.svg";
+import CustomDevelopment from "./../../assets/svg/custom-development.svg";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 

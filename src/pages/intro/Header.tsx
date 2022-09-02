@@ -22,7 +22,7 @@ import {
     Toolbar,
 } from "@mui/material";
 import { NavigationItem } from "library";
-import Connect from "../../../components/connect/Connect";
+import Connect from "../../components/connect/Connect";
 
 const navList: Array<NavigationItem<React.ReactElement>> = [
     {

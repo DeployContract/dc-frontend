@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Button, Container, Stack } from "@mui/material";
 import SwipeableContent from "./SwipeableContent";
-import logo from "../../../assets/svg/logo.svg";
+import logo from "../../assets/svg/logo.svg";
 
 const pwaIntroPassed = () => {
     localStorage.setItem("pwaIntroPassed", "true");

@@ -1,38 +1,48 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
-import Web from "./web/Web";
-import Pwa from "./pwa/Pwa";
-
-const isPwaIntroPassed = (): boolean => {
-    return localStorage.getItem("pwaIntroPassed") === "true";
-};
-
-//Test mode in local host
-const isLocalhost = Boolean(
-    window.location.hostname === "localhost" ||
-        // [::1] is the IPv6 localhost address.
-        window.location.hostname === "[::1]" ||
-        // 127.0.0.0/8 are considered localhost for IPv4.
-        window.location.hostname.match(
-            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-        )
-);
+import { Box, Typography } from "@mui/material";
+import Header from "./Header";
+import GetStart from "./GetStart";
+import Tutorial from "./Tutorial";
+import Pricing from "./Pricing";
+import CustomContract from "./CustomContract";
+import Faq from "./Faq";
+import RoadMap from "./RoadMap";
+import Footer from "./Footer";
+import "./intro.css";
 
 function Intro() {
     return (
-        <Routes>
-            <Route index element={<Web />} />
-            <Route
-                path="PWA"
-                element={
-                    isPwaIntroPassed() && !isLocalhost ? (
-                        <Navigate replace to="/app" />
-                    ) : (
-                        <Pwa />
-                    )
-                }
-            />
-        </Routes>
+        <Box>
+            <Header />
+            <GetStart />
+            <Box className="section">
+                <Tutorial />
+            </Box>
+            <Box className="section">
+                <Typography variant="h3" component="h2" align="center">
+                    Pricing
+                </Typography>
+                <Pricing />
+            </Box>
+            <Box className="section">
+                <CustomContract />
+            </Box>
+            <Box className="section">
+                <Typography variant="h3" component="h2" align="center">
+                    FAQ
+                </Typography>
+                <Faq />
+            </Box>
+            <Box className="section">
+                <Typography variant="h3" component="h2" align="center">
+                    Road map
+                </Typography>
+                <RoadMap />
+            </Box>
+            <Box className="section">
+                <Footer />
+            </Box>
+        </Box>
     );
 }
 

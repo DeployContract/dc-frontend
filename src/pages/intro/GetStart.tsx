@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material";
-import logo from "../../../assets/svg/logo.svg";
+import logo from "../../assets/svg/logo.svg";
 
 function GetStart() {
     return (
@@ -50,7 +50,11 @@ function GetStart() {
                                 variant="h5"
                                 component="h1"
                                 sx={{
-                                    display: { xs: "flex", lg: "none", textAlign: "center" },
+                                    display: {
+                                        xs: "flex",
+                                        lg: "none",
+                                        textAlign: "center",
+                                    },
                                 }}
                             >
                                 Deploy Contract to BlockChain
@@ -60,8 +64,8 @@ function GetStart() {
                                 align="justify"
                                 style={{ textAlignLast: "center" }}
                             >
-                                No more coding need with DeContract, a better way to
-                                create standard contracts and deploy on
+                                No more coding need with DeContract, a better
+                                way to create standard contracts and deploy on
                                 blockchain.
                                 <br />
                                 ERC20, BEP20 Token Generator.
