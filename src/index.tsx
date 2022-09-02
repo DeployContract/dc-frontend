@@ -7,8 +7,8 @@ import App from "./pages/app/App";
 import { Pwa, Intro } from "./pages/pages";
 import "./index.css";
 
-const isPwaIntroPassed = (): boolean => {
-    return localStorage.getItem("pwaIntroPassed") === "true";
+const isPwaIntroPagePassed = (): boolean => {
+    return localStorage.getItem("pwaIntroPagePassed") === "true";
 };
 
 //Test mode in local host
@@ -33,7 +33,7 @@ root.render(
                 <Route
                     path="/pwa"
                     element={
-                        isPwaIntroPassed() && !isLocalhost ? (
+                        isPwaIntroPagePassed() && !isLocalhost ? (
                             <Navigate replace to="/app" />
                         ) : (
                             <Pwa />

@@ -12,7 +12,7 @@ import "./intro.css";
 
 function Intro() {
     return (
-        <Box>
+        <main>
             <Header />
             <GetStart />
             <Box className="section">
@@ -42,7 +42,7 @@ function Intro() {
             <Box className="section">
                 <Footer />
             </Box>
-        </Box>
+        </main>
     );
 }
 
