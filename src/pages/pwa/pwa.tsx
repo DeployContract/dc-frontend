@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Button, Container, Stack } from "@mui/material";
-import SwipeableContent from "./SwipeableContent";
+import SwipeableContent from "./swipeableContent";
 import logo from "../../assets/svg/logo.svg";
 
 const pwaIntroPassed = () => {

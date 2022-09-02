@@ -11,7 +11,6 @@ import { autoPlay } from "react-swipeable-views-utils";
 import CustomDevelopment from "./../../assets/svg/custom-development.svg";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
 const images = [
     {
         label: "Hello1",

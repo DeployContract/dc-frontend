@@ -1,13 +1,13 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import Header from "./Header";
-import GetStart from "./GetStart";
-import Tutorial from "./Tutorial";
-import Pricing from "./Pricing";
-import CustomContract from "./CustomContract";
-import Faq from "./Faq";
-import RoadMap from "./RoadMap";
-import Footer from "./Footer";
+import Header from "./header";
+import GetStart from "./getStart";
+import Tutorial from "./tutorial";
+import Pricing from "./pricing";
+import CustomContract from "./customContract";
+import Faq from "./faq";
+import RoadMap from "./roadMap";
+import Footer from "./footer";
 import "./intro.css";
 
 function Intro() {
