@@ -15,7 +15,7 @@ function Token() {
     };
 
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="md" sx={{ pb: 3 }}>
             <Stack
                 direction="row"
                 justifyContent="center"

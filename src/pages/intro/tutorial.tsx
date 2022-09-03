@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography, Container } from "@mui/material";
-import CoinsAmico from "./../../../assets/svg/coins-amico.svg";
-import Spreadsheets from "./../../../assets/svg/Spreadsheets-amico.svg";
-import CryptoPortfolio from "./../../../assets/svg/CryptoPortfolio.svg";
-import Proggramer from "./../../../assets/svg/Programmer-rafiki.svg";
+import CoinsAmico from "./../../assets/svg/coins-amico.svg";
+import Spreadsheets from "./../../assets/svg/Spreadsheets-amico.svg";
+import CryptoPortfolio from "./../../assets/svg/CryptoPortfolio.svg";
+import Proggramer from "./../../assets/svg/Programmer-rafiki.svg";
 import Grid from "@mui/material/Grid";
 
 interface TutorListItem {
