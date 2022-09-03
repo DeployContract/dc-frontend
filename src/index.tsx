@@ -1,22 +1,49 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./components/app/App";
-import Intro from "./components/intro/Intro";
+import App from "./pages/app/App";
+import { Pwa, Intro } from "./pages/pages";
 import "./index.css";
 
-ReactDOM.render(
+const isPwaIntroPagePassed = (): boolean => {
+    return localStorage.getItem("pwaIntroPagePassed") === "true";
+};
+
+//Test mode in local host
+const isLocalhost = Boolean(
+    window.location.hostname === "localhost" ||
+        // [::1] is the IPv6 localhost address.
+        window.location.hostname === "[::1]" ||
+        // 127.0.0.0/8 are considered localhost for IPv4.
+        window.location.hostname.match(
+            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+        )
+);
+
+const root = ReactDOM.createRoot(
+    document.getElementById("root") as HTMLElement
+);
+root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/*" element={<Intro />} />
+                <Route path="/" element={<Intro />} />
+                <Route
+                    path="/pwa"
+                    element={
+                        isPwaIntroPagePassed() && !isLocalhost ? (
+                            <Navigate replace to="/app" />
+                        ) : (
+                            <Pwa />
+                        )
+                    }
+                />
                 <Route path="/app/*" element={<App />} />
             </Routes>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
