@@ -1,6 +1,4 @@
 import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material";
-import ThemeContext from "./theme";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Intro, Pwa } from "./pages/pages";
 import App from "./pages/app/App";
@@ -21,34 +19,23 @@ const isLocalhost = Boolean(
 );
 
 function Routers() {
-    const [colorMode, setColorMode] = React.useState<"dark" | "light">("light");
-    const theme = createTheme({
-        palette: {
-            mode: colorMode,
-        }
-    });
-
     return (
-        <ThemeContext.Provider value={{ mode: colorMode, setMode: setColorMode }}>
-            <ThemeProvider theme={theme}>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Intro />} />
-                        <Route
-                            path="/pwa"
-                            element={
-                                isPwaIntroPagePassed() && !isLocalhost ? (
-                                    <Navigate replace to="/app" />
-                                ) : (
-                                    <Pwa />
-                                )
-                            }
-                        />
-                        <Route path="/app/*" element={<App />} />
-                    </Routes>
-                </BrowserRouter>
-            </ThemeProvider>
-        </ThemeContext.Provider>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Intro />} />
+                <Route
+                    path="/pwa"
+                    element={
+                        isPwaIntroPagePassed() && !isLocalhost ? (
+                            <Navigate replace to="/app" />
+                        ) : (
+                            <Pwa />
+                        )
+                    }
+                />
+                <Route path="/app/*" element={<App />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

@@ -4,13 +4,32 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import Routers from "./routers";
+import { createTheme, ThemeProvider } from "@mui/material";
+import ThemeContext from "./theme";
+
+function Index() {
+    const [colorMode, setColorMode] = React.useState<"dark" | "light">("light");
+    const theme = createTheme({
+        palette: {
+            mode: colorMode,
+        }
+    });
+
+    return (
+        <ThemeContext.Provider value={{ mode: colorMode, setMode: setColorMode }}>
+            <ThemeProvider theme={theme}>
+                <Routers />
+            </ThemeProvider>
+        </ThemeContext.Provider>
+    )
+}
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <Routers />
+        <Index />
     </React.StrictMode>
 );
 
