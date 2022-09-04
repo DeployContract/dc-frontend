@@ -1,6 +1,6 @@
 export interface NavigationItem<T, U = string, V = any, W = string> {
     /**
-     * Name that will displayed
+     * Name that will display
      */
     name: U;
 

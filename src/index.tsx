@@ -1,48 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
-import App from "./pages/app/App";
-import { Pwa, Intro } from "./pages/pages";
 import "./index.css";
+import Routers from "./routers";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import ThemeContext from "./theme";
 
-const isPwaIntroPagePassed = (): boolean => {
-    return localStorage.getItem("pwaIntroPagePassed") === "true";
-};
+function Index() {
+    const [colorMode, setColorMode] = React.useState<"dark" | "light">("light");
+    const theme = createTheme({
+        palette: {
+            mode: colorMode,
+        }
+    });
 
-//Test mode in local host
-const isLocalhost = Boolean(
-    window.location.hostname === "localhost" ||
-        // [::1] is the IPv6 localhost address.
-        window.location.hostname === "[::1]" ||
-        // 127.0.0.0/8 are considered localhost for IPv4.
-        window.location.hostname.match(
-            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-        )
-);
+    return (
+        <ThemeContext.Provider value={{ mode: colorMode, setMode: setColorMode }}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Routers />
+            </ThemeProvider>
+        </ThemeContext.Provider>
+    )
+}
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Intro />} />
-                <Route
-                    path="/pwa"
-                    element={
-                        isPwaIntroPagePassed() && !isLocalhost ? (
-                            <Navigate replace to="/app" />
-                        ) : (
-                            <Pwa />
-                        )
-                    }
-                />
-                <Route path="/app/*" element={<App />} />
-            </Routes>
-        </BrowserRouter>
+        <Index />
     </React.StrictMode>
 );
 
