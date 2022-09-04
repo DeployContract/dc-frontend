@@ -4,7 +4,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import Routers from "./routers";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import ThemeContext from "./theme";
 
 function Index() {
@@ -18,6 +18,7 @@ function Index() {
     return (
         <ThemeContext.Provider value={{ mode: colorMode, setMode: setColorMode }}>
             <ThemeProvider theme={theme}>
+                <CssBaseline />
                 <Routers />
             </ThemeProvider>
         </ThemeContext.Provider>
