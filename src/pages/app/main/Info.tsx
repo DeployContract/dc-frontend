@@ -11,15 +11,19 @@ import {
     DialogContent,
     DialogTitle,
     DialogContentText,
+    ToggleButton,
+    ToggleButtonGroup,
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Icon from "../../../components/icon/Icon";
+import ThemeContext from "../../../theme";
 
 function Info() {
     const [modalOpen, setModalOpen] = React.useState<boolean>(false);
     const theme = useTheme();
     const mobileScreen = useMediaQuery(theme.breakpoints.down("md"));
+    const { mode, setMode } = React.useContext(ThemeContext);
 
     const unRegister = () =>
         navigator.serviceWorker.getRegistrations().then((res) =>
@@ -29,12 +33,21 @@ function Info() {
         );
 
     const updateHandler = () => {
-        caches.keys().then((keys) => {
-            for (let name of keys) caches.delete(name);
+        caches.keys().then(async (keys) => {
+            for (let name of keys) await caches.delete(name);
         });
     };
 
     const changeModalOpen = () => setModalOpen(!modalOpen);
+
+    const changeTheme = (
+        _event: React.MouseEvent<HTMLElement>,
+        newMode: "dark" | "light" | "system"
+    ) => {
+        if (newMode !== null) {
+            setMode(newMode);
+        }
+    };
 
     return (
         <Stack
@@ -81,6 +94,17 @@ function Info() {
                     </Button>
                 </DialogActions>
             </Dialog>
+            <ToggleButtonGroup
+                color="primary"
+                value={mode}
+                exclusive
+                onChange={changeTheme}
+                aria-label="Platform"
+            >
+                <ToggleButton value="dark">Dark</ToggleButton>
+                <ToggleButton value="system">System</ToggleButton>
+                <ToggleButton value="light">Light</ToggleButton>
+            </ToggleButtonGroup>
         </Stack>
     );
 }
