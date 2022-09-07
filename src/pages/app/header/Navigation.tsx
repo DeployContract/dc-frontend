@@ -7,8 +7,9 @@ import {
     ListItem,
     ListItemText,
     ListItemIcon,
+    Link,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { navList } from "./NavList";
 
 /**
@@ -18,7 +19,14 @@ const NavItems = (listItemOnClick?: any) => (
     <List>
         {navList.map((item) => {
             return (
-                <Link to={item.path || "/notfound"}>
+                <Link
+                    sx={{
+                        textDecoration: "none",
+                        color: "text.secondary",
+                    }}
+                    component={RouterLink}
+                    to={item.path || "/notfound"}
+                >
                     <ListItem
                         button
                         onClick={listItemOnClick || null || item.onClick}
