@@ -10,16 +10,18 @@ import {
     CssBaseline,
     useMediaQuery,
 } from "@mui/material";
-import ThemeContext from "./theme";
+import { ThemeContext, defaultTheme, ThemeColor } from "./theme";
 
 function Index() {
-    const [colorMode, setColorMode] = React.useState<
-        "dark" | "light" | "system"
-    >("light");
+    const [colorMode, setColorMode] = React.useState<ThemeColor>(
+        (localStorage.getItem("themeMode") as ThemeColor) || "system"
+    );
 
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
     const theme = React.useMemo(() => {
+        localStorage.setItem("themeMode", colorMode);
+
         const mode =
             colorMode === "system"
                 ? prefersDarkMode
@@ -27,11 +29,14 @@ function Index() {
                     : "light"
                 : colorMode;
 
-        return createTheme({
-            palette: {
-                mode: mode,
+        return createTheme(
+            {
+                palette: {
+                    mode: mode,
+                },
             },
-        });
+            defaultTheme
+        );
     }, [prefersDarkMode, colorMode]);
 
     return (

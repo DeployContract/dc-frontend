@@ -1,15 +1,23 @@
+import { ThemeOptions } from "@mui/material";
 import React, { createContext } from "react";
 
-interface ThemeI {
-    mode: "light" | "dark" | "system";
+type ThemeColor = "light" | "dark" | "system";
+
+interface ThemeMode {
+    mode: ThemeColor;
     setMode: React.Dispatch<React.SetStateAction<"dark" | "light" | "system">>;
 }
 
-const theme: ThemeI = {
+const theme: ThemeMode = {
     mode: "light",
     setMode: () => { }
 };
 
 const ThemeContext = createContext(theme);
 
-export default ThemeContext;
+// Pass The Default Theme
+const defaultTheme: ThemeOptions = {
+};
+
+export type { ThemeColor };
+export { ThemeContext, defaultTheme };
