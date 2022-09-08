@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
     return (
@@ -11,7 +12,9 @@ function Dashboard() {
                 alignItems="center"
             >
                 <Typography variant="h5">Dashboard</Typography>
-                <Button variant="contained">New Token</Button>
+                <Link to="/app/token/generator">
+                    <Button variant="contained">New Token</Button>
+                </Link>
             </Stack>
         </Box>
     );
