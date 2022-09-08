@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Container, Snackbar } from "@mui/material";
+import { Box, Button, Container, Snackbar } from "@mui/material";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Navigation from "./header/Navigation";
+import useServiceWorker from "../../useServiceWorker";
 
 /**
  * Default navigation options
@@ -31,19 +32,15 @@ function App() {
     const [navOpen, setNavOpen] = React.useState<boolean>(
         DEFAULT_NAV_OPEN_STATE
     );
-
-    const [updateAvailable, setUpdateAvailable] =
-        React.useState<boolean>(false);
+    const { aUpdate, update, waitingWorker } = useServiceWorker();
 
     const changeNavOpen = () => setNavOpen(!navOpen);
 
-    React.useEffect(() => {
-        navigator.serviceWorker.getRegistration().then((registeration) => {
-            registeration?.addEventListener("updatefound", () => {
-                setUpdateAvailable(true);
-            });
-        });
-    }, []);
+    const updateAction = (
+        <React.Fragment>
+            <Button onClick={update}>Update</Button>
+        </React.Fragment>
+    );
 
     return (
         <Box
@@ -73,8 +70,9 @@ function App() {
                 <Main />
             </Container>
             <Snackbar
-                open={updateAvailable}
-                message="New Update Is available please Reopen app to update."
+                open={Boolean(aUpdate && waitingWorker)}
+                action={updateAction}
+                message="New Update Is available !"
             />
         </Box>
     );
