@@ -1,31 +1,7 @@
 import React from "react";
-import {
-    Box,
-    Button,
-    Stack,
-    Typography,
-    Card,
-    CardContent,
-    Grid,
-    CardActions,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
-    TextField,
-    useTheme,
-    useMediaQuery,
-    Chip,
-} from "@mui/material";
-
-interface Project {
-    name: string;
-    description: string;
-}
+import { Box, Button, Stack, Typography } from "@mui/material";
 
 function Dashboard() {
-    const theme = useTheme();
-
     return (
         <Box>
             <Stack
