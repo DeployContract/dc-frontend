@@ -4,18 +4,9 @@ import {
     Typography,
     Card,
     CardContent,
-    CardActions,
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
-    DialogContentText,
     ToggleButton,
     ToggleButtonGroup,
 } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import Icon from "../../../components/icon/Icon";
 import { ThemeContext } from "../../../theme";
 

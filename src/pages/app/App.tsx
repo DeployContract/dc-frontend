@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Snackbar } from "@mui/material";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Navigation from "./header/Navigation";
@@ -32,7 +32,18 @@ function App() {
         DEFAULT_NAV_OPEN_STATE
     );
 
+    const [updateAvailable, setUpdateAvailable] =
+        React.useState<boolean>(false);
+
     const changeNavOpen = () => setNavOpen(!navOpen);
+
+    React.useEffect(() => {
+        navigator.serviceWorker.getRegistration().then((registeration) => {
+            registeration?.addEventListener("updatefound", () => {
+                setUpdateAvailable(true);
+            });
+        });
+    }, []);
 
     return (
         <Box
@@ -61,6 +72,10 @@ function App() {
             >
                 <Main />
             </Container>
+            <Snackbar
+                open={updateAvailable}
+                message="New Update Is available please Reopen app to update."
+            />
         </Box>
     );
 }
