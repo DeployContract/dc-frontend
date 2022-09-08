@@ -32,16 +32,9 @@ function App() {
     const [navOpen, setNavOpen] = React.useState<boolean>(
         DEFAULT_NAV_OPEN_STATE
     );
-    const [toastOpen, setToastOpen] = React.useState(false);
     const { aUpdate, update, waitingWorker } = useServiceWorker();
 
     const changeNavOpen = () => setNavOpen(!navOpen);
-
-    React.useEffect(() => {
-        if (aUpdate && waitingWorker) {
-            setToastOpen(true);
-        }
-    }, [aUpdate, update, waitingWorker]);
 
     const updateAction = (
         <React.Fragment>
@@ -77,7 +70,7 @@ function App() {
                 <Main />
             </Container>
             <Snackbar
-                open={toastOpen}
+                open={aUpdate}
                 action={updateAction}
                 message="New Update Is available !"
             />
