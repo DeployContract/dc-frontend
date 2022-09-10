@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationItem } from "library";
+import { NavigationItem } from "lib";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import TokenIcon from "@mui/icons-material/Token";
 import HelpIcon from "@mui/icons-material/Help";
