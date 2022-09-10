@@ -20,7 +20,6 @@
         "@types/react-dom": "^18.0.2",
         "@types/react-swipeable-views": "^0.13.1",
         "@types/react-swipeable-views-utils": "^0.13.3",
-        "library": "file:./src/library",
         "react": "^18.0.2",
         "react-dom": "^18.0.2",
         "react-router-dom": "^6.2.2",
