@@ -21,7 +21,7 @@ import {
     Typography,
     Toolbar,
 } from "@mui/material";
-import { NavigationItem } from "library";
+import { NavigationItem } from "lib";
 import Connect from "../../components/connect/Connect";
 
 const navList: Array<NavigationItem<React.ReactElement>> = [
