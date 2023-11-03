@@ -37,12 +37,7 @@ function Connect() {
 
     return (
         <Box>
-            {wallet ? (
-                <div>
-                    <span>Connected wallet: {(wallet as any).name}</span>
-                    <span>Device: {wallet?.device.appName}</span>
-                </div>
-            ) : (<TonConnectButton />)}
+            <TonConnectButton />
             <Menu anchorEl={anchor} onClose={toggleMenu} open={Boolean(anchor)}>
                 <MenuItem>custom</MenuItem>
             </Menu>
