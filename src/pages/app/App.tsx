@@ -4,6 +4,7 @@ import Header from "./header/Header";
 import Main from "./main/Main";
 import Navigation from "./header/Navigation";
 import useServiceWorker from "../../useServiceWorker";
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 /**
  * Default navigation options
@@ -43,6 +44,7 @@ function App() {
     );
 
     return (
+            <TonConnectUIProvider manifestUrl="%PUBLIC_URL%/tonconnect-manifest.json">
         <Box
             sx={{
                 display: "flex",
@@ -75,6 +77,7 @@ function App() {
                 message="New Update Is available !"
             />
         </Box>
+        </TonConnectUIProvider>
     );
 }
 

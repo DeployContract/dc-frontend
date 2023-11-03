@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useConnect, wallets } from "@qhecuba/hector-react-hooks";
 import { Box, Button, Grid, Menu, MenuItem, ListItemIcon } from "@mui/material";
 import Network from "./Network";
+import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
 
 /**
  * @param str Target string
@@ -21,13 +22,8 @@ const cutString = (str: string, rep: number): Array<string> => {
 };
 
 function Connect() {
-    const [status, connect, getWallet] = useConnect(wallets.metamask());
+    const wallet = useTonWallet();
     const [anchor, setAnchor] = React.useState<HTMLButtonElement | null>(null);
-
-    useEffect(() => {
-        connect();
-        getWallet();
-    }, []);
 
     const hideWallet = (walletAddress: string, len: number): string => {
         const str = cutString(walletAddress, walletAddress.length / len);
@@ -41,21 +37,12 @@ function Connect() {
 
     return (
         <Box>
-            {status.wallet ? (
-                <Button sx={{ color: "white" }} onClick={toggleMenu}>
-                    <Grid container direction="column">
-                        <Grid item>{hideWallet(status.wallet, 7)}</Grid>
-                        <Grid item>
-                            <Network />
-                        </Grid>
-                    </Grid>
-                </Button>
-            ) : (
-                <Button sx={{ color: "white" }} onClick={connect}>
-                    Connect
-                </Button>
-            )}
-
+            {wallet ? (
+                <div>
+                    <span>Connected wallet: {(wallet as any).name}</span>
+                    <span>Device: {wallet?.device.appName}</span>
+                </div>
+            ) : (<TonConnectButton />)}
             <Menu anchorEl={anchor} onClose={toggleMenu} open={Boolean(anchor)}>
                 <MenuItem>custom</MenuItem>
             </Menu>
