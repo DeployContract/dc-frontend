@@ -41,7 +41,7 @@ function Index() {
     }, [prefersDarkMode, colorMode]);
 
     return (
-        <TonConnectUIProvider manifestUrl="%PUBLIC_URL%/tonconnect-manifest.json">
+        <TonConnectUIProvider manifestUrl="https://dc-frontend.pages.dev/tonconnect-manifest.json">
             <ThemeContext.Provider
                 value={{ mode: colorMode, setMode: setColorMode }}
             >
