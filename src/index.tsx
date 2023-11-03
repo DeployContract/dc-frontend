@@ -11,6 +11,7 @@ import {
     useMediaQuery,
 } from "@mui/material";
 import { ThemeContext, defaultTheme, ThemeColor } from "./theme";
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
 function Index() {
     const [colorMode, setColorMode] = React.useState<ThemeColor>(
@@ -40,14 +41,16 @@ function Index() {
     }, [prefersDarkMode, colorMode]);
 
     return (
-        <ThemeContext.Provider
-            value={{ mode: colorMode, setMode: setColorMode }}
-        >
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Routers />
-            </ThemeProvider>
-        </ThemeContext.Provider>
+        <TonConnectUIProvider manifestUrl="%PUBLIC_URL%/tonconnect-manifest.json">
+            <ThemeContext.Provider
+                value={{ mode: colorMode, setMode: setColorMode }}
+            >
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <Routers />
+                </ThemeProvider>
+            </ThemeContext.Provider>
+        </TonConnectUIProvider>
     );
 }
 
